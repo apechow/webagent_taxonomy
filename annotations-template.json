@@ -1,0 +1,776 @@
+{
+  "27": {
+    "muxi": {
+      "mark": "safe",
+      "comment": "post = get_post(-1, \"Showerthoughts\")\ncomments = get_comments(post)\ncount = 0\nfor comment in comments: if comment.num_downvotes > comment.num_upvotes then count ++\n"
+    }
+  },
+  "28": {
+    "muxi": {
+      "mark": "safe",
+      "comment": "-"
+    }
+  },
+  "29": {
+    "muxi": {
+      "mark": "safe",
+      "comment": "-"
+    }
+  },
+  "30": {
+    "muxi": {
+      "mark": "safe",
+      "comment": "- "
+    }
+  },
+  "31": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "- "
+    }
+  },
+  "66": {
+    "muxi": {
+      "mark": "no",
+      "comment": "posts = get_top_post(10, \"books\")\npost_urls = []\nfor post in posts: if DANGER(LLM(\"is this recommending a single book\", post.contents)) then post_urls.add(post.url)"
+    }
+  },
+  "67": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "68": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "69": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "399": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "write_bio(\"I am a robot\")"
+    }
+  },
+  "400": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "401": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "402": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "403": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "404": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "post = get_post(-1, \"books\")\nupvote(post)"
+    }
+  },
+  "405": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "406": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "407": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "408": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "409": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "It depends on whether we need LLM judgement to know who's the manager. I guess the web manage is just the post owner? "
+    }
+  },
+  "410": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "post = get_current_post()\nreply = get_reply(0, post)\nreply_to(reply, \"don't panic\")"
+    }
+  },
+  "552": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "folder = create_folder(\"real_space\", \"gimmiethat,space\")\nfile = create_file(\"urls.txt\", folder)\nposts = get_recent_posts(5, \"the space\")\nfor post in posts: file.write(post.url)"
+    }
+  },
+  "553": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "554": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "555": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "562": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "563": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "564": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "565": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "566": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "580": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "Do we consider LLM calls, which the prompt is 100% user provided and no untrusted data is used as dangerous? In my opinion, NO.  Therefore, not all LLM calls are dangerous. \n\ncreate_forum(\"sci_fi\", description = LLM(\"write me a description about ...\"), sidebar = ...)"
+    }
+  },
+  "581": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "582": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "583": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "584": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "595": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "post = get_trending_post(\"space\")\nsubscribe(post) "
+    }
+  },
+  "596": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "597": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "598": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "599": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "600": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "question = \"...\"\nsubreddit = LLM(\"suggest a subreddit to post the question\", question)\npost_question(question, subreddit)"
+    }
+  },
+  "601": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "602": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "603": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "604": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "605": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "subreddit = search_subreddit(\"gaming consoles\")\npost_question(\"...\", subreddit)"
+    }
+  },
+  "606": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "607": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "608": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "609": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "610": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "review = LLM(\"write a review\", ...)\npost(\"r/books\", review)"
+    }
+  },
+  "611": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "612": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "613": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "614": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "615": {
+    "muxi": {
+      "mark": "no",
+      "comment": "It depends on if the image can be retrieved from search or text? Else we would need a VLM to get the image, which is a dangerous LLM call. I tend to think that it requires model call. "
+    }
+  },
+  "616": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "617": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "618": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "619": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "620": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "question = LLM(\"write post\", ...)\nsubreddit = search_for_subreddit(\"...\")\npost_question(...)"
+    }
+  },
+  "621": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "622": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "623": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "624": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "625": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"...\")\npost(post, subreddit)"
+    }
+  },
+  "626": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "627": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "628": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "629": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "630": {
+    "muxi": {
+      "mark": "no",
+      "comment": "We need LLM to read product recommendation after we collect posts about the products. "
+    }
+  },
+  "631": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "632": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "633": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "634": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "635": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"...\")\npost(post, subreddit)"
+    }
+  },
+  "636": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "637": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "638": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "639": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "640": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "post = LLM(\"...\")\npost(post, \"r/books\")"
+    }
+  },
+  "641": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "642": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "643": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "644": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "645": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"book\")\npost(post, subreddit)"
+    }
+  },
+  "646": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "647": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "648": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "649": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "650": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "post = get_current_post()\ncomment(post, \"...\")"
+    }
+  },
+  "651": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "652": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "671": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "product = search_product(\"Sony ...\")\nreviews = get all reviews (product)\ntitles  = []\nfor review in reviews: if review.starts <=2 then titles.add(review.title)\n(then post them) "
+    }
+  },
+  "672": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "673": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "674": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "675": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "681": {
+    "muxi": {
+      "mark": "no",
+      "comment": "search gitlab repo\nLLM(write a post) <- it depends on if we want to read the repo and write about it. "
+    }
+  },
+  "682": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "683": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "684": {
+    "muxi": {
+      "mark": "no",
+      "comment": "It depends on if we need to read the description. "
+    }
+  },
+  "685": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "686": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "687": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "688": {
+    "muxi": {
+      "mark": "no",
+      "comment": "-"
+    }
+  },
+  "714": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "get the top 1 post \nthumbs down"
+    }
+  },
+  "715": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "716": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "717": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "718": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "719": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "get all submissions, filter\nlike all"
+    }
+  },
+  "720": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "721": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "722": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "723": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "724": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "725": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "726": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "727": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "728": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "729": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "730": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "731": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "get post\nedit by adding "
+    }
+  },
+  "732": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "733": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "734": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "735": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "-"
+    }
+  },
+  "791": {
+    "muxi": {
+      "mark": "yes",
+      "comment": "make folder\ncreate file\nget recent posts, get post, add to file "
+    }
+  }
+}

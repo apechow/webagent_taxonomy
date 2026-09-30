@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annotation Summary - WebArena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --bg-elevated: #1c2128;
+      --border: #30363d;
+      --text-primary: #e6edf3;
+      --text-secondary: #8b949e;
+      --text-muted: #6e7681;
+      --accent-orange: #f78166;
+      --accent-green: #3fb950;
+      --accent-red: #f85149;
+      --accent-yellow: #d29922;
+      --accent-blue: #58a6ff;
+      --accent-purple: #a371f7;
+      --accent-cyan: #39c5cf;
+      --accent-pink: #db61a2;
+      --gradient-start: #1a1f35;
+      --gradient-end: #0d1117;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      min-height: 100vh;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      border-color: var(--accent-blue);
+      background: var(--bg-elevated);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .stat-card h3 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .big-number {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: var(--bg-elevated);
+      border-radius: 4px;
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    /* Annotator Stats */
+    .annotator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .annotator-card {
+      background: var(--bg-elevated);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .annotator-name {
+      font-weight: 600;
+      color: var(--accent-pink);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .annotator-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .annotator-stat {
+      text-align: center;
+      padding: 0.5rem;
+      background: var(--bg-card);
+      border-radius: 6px;
+    }
+
+    .annotator-stat-value {
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .annotator-stat-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .annotator-stat.total .annotator-stat-value { color: var(--accent-blue); }
+    .annotator-stat.safe .annotator-stat-value { color: var(--accent-green); }
+    .annotator-stat.safe_with_influence .annotator-stat-value { color: var(--accent-cyan); }
+    .annotator-stat.no_replanning .annotator-stat-value { color: var(--accent-red); }
+    .annotator-stat.no_other .annotator-stat-value { color: var(--accent-orange); }
+    .annotator-stat.legacy .annotator-stat-value { color: var(--accent-yellow); }
+
+    /* Agreement Section */
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .agreement-overview {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .agreement-stat {
+      text-align: center;
+    }
+
+    .agreement-value {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .agreement-value.good { color: var(--accent-green); }
+    .agreement-value.medium { color: var(--accent-yellow); }
+    .agreement-value.low { color: var(--accent-red); }
+
+    .agreement-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Pairwise Agreement Table */
+    .pairwise-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .pairwise-table th,
+    .pairwise-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pairwise-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    .pairwise-table .pair-names {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pairwise-table .vs { color: var(--text-muted); }
+
+    .agreement-badge {
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .agreement-badge.high {
+      background: rgba(63, 185, 80, 0.2);
+      color: var(--accent-green);
+    }
+
+    .agreement-badge.medium {
+      background: rgba(210, 153, 34, 0.2);
+      color: var(--accent-yellow);
+    }
+
+    .agreement-badge.low {
+      background: rgba(248, 81, 73, 0.2);
+      color: var(--accent-red);
+    }
+
+    /* Website Stats */
+    .website-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .website-card {
+      background: var(--bg-elevated);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .website-name {
+      font-weight: 500;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .website-progress {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .website-bar {
+      height: 6px;
+      background: var(--bg-card);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .website-bar-fill {
+      height: 100%;
+      background: var(--accent-cyan);
+      border-radius: 3px;
+    }
+
+    /* Disagreements Table */
+    .disagreements-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .disagreements-table th,
+    .disagreements-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .disagreements-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    .task-intent-cell {
+      max-width: 400px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .annotations-cell {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .mini-badge {
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .mini-badge.safe {
+      background: rgba(63, 185, 80, 0.2);
+      color: var(--accent-green);
+    }
+
+    .mini-badge.safe_with_influence {
+      background: rgba(57, 197, 207, 0.2);
+      color: var(--accent-cyan);
+    }
+
+    .mini-badge.no_replanning {
+      background: rgba(248, 81, 73, 0.2);
+      color: var(--accent-red);
+    }
+
+    .mini-badge.no_other {
+      background: rgba(247, 129, 102, 0.2);
+      color: var(--accent-orange);
+    }
+
+    /* Legacy marks */
+    .mini-badge.yes,
+    .mini-badge.no,
+    .mini-badge.maybe {
+      background: rgba(210, 153, 34, 0.2);
+      color: var(--accent-yellow);
+    }
+
+    /* Tasks Table */
+    .tasks-container {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    .tasks-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .tasks-table th,
+    .tasks-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tasks-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg-card);
+    }
+
+    .consensus-badge {
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .consensus-badge.safe {
+      background: rgba(63, 185, 80, 0.2);
+      color: var(--accent-green);
+    }
+
+    .consensus-badge.safe_with_influence {
+      background: rgba(57, 197, 207, 0.2);
+      color: var(--accent-cyan);
+    }
+
+    .consensus-badge.no_replanning {
+      background: rgba(248, 81, 73, 0.2);
+      color: var(--accent-red);
+    }
+
+    .consensus-badge.no_other {
+      background: rgba(247, 129, 102, 0.2);
+      color: var(--accent-orange);
+    }
+
+    /* Legacy consensus */
+    .consensus-badge.yes,
+    .consensus-badge.no,
+    .consensus-badge.maybe {
+      background: rgba(210, 153, 34, 0.2);
+      color: var(--accent-yellow);
+    }
+
+    .consensus-badge.disputed {
+      background: rgba(163, 113, 247, 0.2);
+      color: var(--accent-purple);
+    }
+
+    /* Filter tabs */
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      padding: 0.5rem 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-tab:hover { border-color: var(--text-secondary); }
+    .filter-tab.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: var(--bg-dark);
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      color: var(--text-muted);
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent-blue);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-muted);
+    }
+
+    .export-btn {
+      padding: 0.6rem 1.2rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .export-btn:hover {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      header { flex-direction: column; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 Annotation Summary</h1>
+      <div style="display: flex; gap: 1rem;">
+        <button class="export-btn" onclick="exportData()">⬇ Export JSON</button>
+        <a href="/" class="back-link">← Back to Annotator</a>
+      </div>
+    </header>
+
+    <div id="content">
+      <div class="loading"><div class="spinner"></div></div>
+    </div>
+  </div>
+
+  <script>
+    let summaryData = null;
+    let taskFilter = 'all';
+    
+    const MARK_LABELS = {
+      'safe': 'Safe',
+      'safe_with_influence': 'Safe (Influence)',
+      'no_replanning': 'No (Replan)',
+      'no_other': 'No (Other)',
+      'yes': 'Yes (legacy)',
+      'no': 'No (legacy)',
+      'maybe': 'Maybe (legacy)'
+    };
+
+    async function init() {
+      const response = await fetch('/api/summary');
+      summaryData = await response.json();
+      render();
+    }
+
+    function render() {
+      const content = document.getElementById('content');
+
+      if (!summaryData.annotators || summaryData.annotators.length === 0) {
+        content.innerHTML = `
+          <div class="empty-state">
+            <h2>No annotations yet</h2>
+            <p>Start annotating tasks to see the summary here.</p>
+            <a href="/" class="back-link" style="display: inline-flex; margin-top: 1rem;">Start Annotating →</a>
+          </div>
+        `;
+        return;
+      }
+
+      const { overall, annotators, annotator_stats, by_website, agreement, annotated_tasks } = summaryData;
+
+      // Overall agreement styling
+      const agreementClass = agreement.overall_agreement >= 80 ? 'good' : 
+                            agreement.overall_agreement >= 60 ? 'medium' : 'low';
+
+      // Render pairwise agreement
+      let pairwiseHtml = '';
+      if (Object.keys(agreement.pairwise).length > 0) {
+        const pairwiseRows = Object.values(agreement.pairwise).map(p => {
+          const badgeClass = p.agreement_percent >= 80 ? 'high' : 
+                            p.agreement_percent >= 60 ? 'medium' : 'low';
+          return `
+            <tr>
+              <td>
+                <div class="pair-names">
+                  <span>${escapeHtml(p.annotator1)}</span>
+                  <span class="vs">vs</span>
+                  <span>${escapeHtml(p.annotator2)}</span>
+                </div>
+              </td>
+              <td>${p.total}</td>
+              <td>${p.agreed}</td>
+              <td><span class="agreement-badge ${badgeClass}">${p.agreement_percent !== null ? p.agreement_percent + '%' : 'N/A'}</span></td>
+            </tr>
+          `;
+        }).join('');
+
+        pairwiseHtml = `
+          <table class="pairwise-table">
+            <thead>
+              <tr>
+                <th>Annotators</th>
+                <th>Common Tasks</th>
+                <th>Agreed</th>
+                <th>Agreement</th>
+              </tr>
+            </thead>
+            <tbody>${pairwiseRows}</tbody>
+          </table>
+        `;
+      }
+
+      // Render disagreements
+      let disagreementsHtml = '';
+      if (agreement.tasks_with_disagreement && agreement.tasks_with_disagreement.length > 0) {
+        const disagreementRows = agreement.tasks_with_disagreement.slice(0, 20).map(t => {
+          const annotationBadges = Object.entries(t.annotations).map(([name, ann]) => 
+            `<span class="mini-badge ${ann.mark}">${escapeHtml(name)}: ${MARK_LABELS[ann.mark] || ann.mark}</span>`
+          ).join('');
+          return `
+            <tr>
+              <td>#${t.task_id}</td>
+              <td class="task-intent-cell" title="${escapeHtml(t.intent)}">${escapeHtml(t.intent)}</td>
+              <td><div class="annotations-cell">${annotationBadges}</div></td>
+            </tr>
+          `;
+        }).join('');
+
+        disagreementsHtml = `
+          <div class="section">
+            <div class="section-title">⚠️ Tasks with Disagreement (${agreement.tasks_with_disagreement.length})</div>
+            <table class="disagreements-table">
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Intent</th>
+                  <th>Annotations</th>
+                </tr>
+              </thead>
+              <tbody>${disagreementRows}</tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      // Render annotator cards
+      const annotatorCards = annotators.map(name => {
+        const stats = annotator_stats[name];
+        return `
+          <div class="annotator-card">
+            <div class="annotator-name">👤 ${escapeHtml(name)}</div>
+            <div class="annotator-stats">
+              <div class="annotator-stat total">
+                <div class="annotator-stat-value">${stats.total_annotated}</div>
+                <div class="annotator-stat-label">Done</div>
+              </div>
+              <div class="annotator-stat safe">
+                <div class="annotator-stat-value">${stats.safe || 0}</div>
+                <div class="annotator-stat-label">Safe</div>
+              </div>
+              <div class="annotator-stat safe_with_influence">
+                <div class="annotator-stat-value">${stats.safe_with_influence || 0}</div>
+                <div class="annotator-stat-label">Influence</div>
+              </div>
+              <div class="annotator-stat no_replanning">
+                <div class="annotator-stat-value">${stats.no_replanning || 0}</div>
+                <div class="annotator-stat-label">Replan</div>
+              </div>
+              <div class="annotator-stat no_other">
+                <div class="annotator-stat-value">${stats.no_other || 0}</div>
+                <div class="annotator-stat-label">Other</div>
+              </div>
+              <div class="annotator-stat legacy">
+                <div class="annotator-stat-value">${stats.legacy || 0}</div>
+                <div class="annotator-stat-label">Review</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Render website cards
+      const websiteCards = Object.entries(by_website)
+        .sort((a, b) => b[1].total - a[1].total)
+        .map(([name, stats]) => {
+          const percent = stats.total > 0 ? Math.round(stats.annotated / stats.total * 100) : 0;
+          return `
+            <div class="website-card">
+              <div class="website-name">${escapeHtml(name)}</div>
+              <div class="website-progress">
+                <span>${stats.annotated} / ${stats.total}</span>
+                <span>${percent}%</span>
+              </div>
+              <div class="website-bar">
+                <div class="website-bar-fill" style="width: ${percent}%"></div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+      // Filter tasks based on taskFilter
+      const LEGACY_MARKS = ['yes', 'no', 'maybe'];
+      let filteredAnnotatedTasks = annotated_tasks;
+      if (taskFilter === 'legacy') {
+        filteredAnnotatedTasks = annotated_tasks.filter(t => {
+          // Show tasks where any annotation uses a legacy mark
+          return Object.values(t.annotations).some(a => LEGACY_MARKS.includes(a.mark));
+        });
+      } else if (taskFilter !== 'all') {
+        filteredAnnotatedTasks = annotated_tasks.filter(t => t.consensus === taskFilter);
+      }
+
+      // Render annotated tasks table
+      const taskRows = filteredAnnotatedTasks.slice(0, 100).map(t => {
+        const annotationBadges = Object.entries(t.annotations).map(([name, ann]) => 
+          `<span class="mini-badge ${ann.mark}" title="${escapeHtml(name)}">${escapeHtml(name.charAt(0).toUpperCase())}</span>`
+        ).join('');
+        return `
+          <tr>
+            <td>#${t.task_id}</td>
+            <td class="task-intent-cell" title="${escapeHtml(t.intent)}">${escapeHtml(t.intent)}</td>
+            <td>${t.sites.map(s => `<span class="mini-badge" style="background: rgba(57,197,207,0.2); color: var(--accent-cyan);">${s}</span>`).join(' ')}</td>
+            <td><span class="consensus-badge ${t.consensus}">${t.consensus.toUpperCase()}</span></td>
+            <td><div class="annotations-cell">${annotationBadges}</div></td>
+          </tr>
+        `;
+      }).join('');
+
+      content.innerHTML = `
+        <!-- Overall Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Overall Progress</h3>
+            <div class="big-number">${overall.progress_percent}%</div>
+            <div class="stat-subtitle">${overall.tasks_annotated} of ${overall.total_tasks} tasks annotated</div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: ${overall.progress_percent}%"></div>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <h3>Annotators</h3>
+            <div class="big-number">${annotators.length}</div>
+            <div class="stat-subtitle">people contributing annotations</div>
+          </div>
+          
+          <div class="stat-card">
+            <h3>Inter-Annotator Agreement</h3>
+            <div class="agreement-value ${agreementClass}">${agreement.overall_agreement !== null ? agreement.overall_agreement + '%' : 'N/A'}</div>
+            <div class="stat-subtitle">
+              ${agreement.full_agreement_count} / ${agreement.multi_annotated_count} tasks with full consensus
+            </div>
+          </div>
+        </div>
+
+        <!-- Annotator Stats -->
+        <div class="section">
+          <div class="section-title">👥 Annotator Statistics</div>
+          <div class="annotator-grid">${annotatorCards}</div>
+        </div>
+
+        <!-- Pairwise Agreement -->
+        ${Object.keys(agreement.pairwise).length > 0 ? `
+        <div class="section">
+          <div class="section-title">🤝 Pairwise Agreement</div>
+          ${pairwiseHtml}
+        </div>
+        ` : ''}
+
+        <!-- Disagreements -->
+        ${disagreementsHtml}
+
+        <!-- Website Progress -->
+        <div class="section">
+          <div class="section-title">🌐 Progress by Website</div>
+          <div class="website-grid">${websiteCards}</div>
+        </div>
+
+        <!-- All Annotated Tasks -->
+        <div class="section">
+          <div class="section-title">📝 Annotated Tasks (${annotated_tasks.length})</div>
+          <div class="filter-tabs">
+            <button class="filter-tab ${taskFilter === 'all' ? 'active' : ''}" onclick="setTaskFilter('all')">All</button>
+            <button class="filter-tab ${taskFilter === 'safe' ? 'active' : ''}" onclick="setTaskFilter('safe')">Safe</button>
+            <button class="filter-tab ${taskFilter === 'safe_with_influence' ? 'active' : ''}" onclick="setTaskFilter('safe_with_influence')">Safe (Influence)</button>
+            <button class="filter-tab ${taskFilter === 'no_replanning' ? 'active' : ''}" onclick="setTaskFilter('no_replanning')">No (Replan)</button>
+            <button class="filter-tab ${taskFilter === 'no_other' ? 'active' : ''}" onclick="setTaskFilter('no_other')">No (Other)</button>
+            <button class="filter-tab ${taskFilter === 'legacy' ? 'active' : ''}" onclick="setTaskFilter('legacy')" style="color: var(--accent-yellow);">Legacy</button>
+            <button class="filter-tab ${taskFilter === 'disputed' ? 'active' : ''}" onclick="setTaskFilter('disputed')">Disputed</button>
+          </div>
+          <div class="tasks-container">
+            <table class="tasks-table">
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Intent</th>
+                  <th>Sites</th>
+                  <th>Consensus</th>
+                  <th>Annotators</th>
+                </tr>
+              </thead>
+              <tbody>${taskRows}</tbody>
+            </table>
+          </div>
+          ${filteredAnnotatedTasks.length > 100 ? `<p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.85rem;">Showing first 100 of ${filteredAnnotatedTasks.length} tasks</p>` : ''}
+        </div>
+      `;
+    }
+
+    function setTaskFilter(filter) {
+      taskFilter = filter;
+      render();
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    async function exportData() {
+      const response = await fetch('/api/export');
+      const data = await response.json();
+      
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `annotations_export_${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    init();
+  </script>
+</body>
+</html>
+

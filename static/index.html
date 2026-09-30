@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebArena Task Annotator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --bg-elevated: #1c2128;
+      --border: #30363d;
+      --text-primary: #e6edf3;
+      --text-secondary: #8b949e;
+      --text-muted: #6e7681;
+      --accent-orange: #f78166;
+      --accent-green: #3fb950;
+      --accent-red: #f85149;
+      --accent-yellow: #d29922;
+      --accent-blue: #58a6ff;
+      --accent-purple: #a371f7;
+      --accent-cyan: #39c5cf;
+      --accent-pink: #db61a2;
+      --gradient-start: #1a1f35;
+      --gradient-end: #0d1117;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      min-height: 100vh;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+    /* Login Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 450px;
+      width: 90%;
+      animation: modalIn 0.3s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .modal p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .modal input {
+      width: 100%;
+      padding: 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal input:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+
+    .modal .existing-annotators {
+      margin-bottom: 1.5rem;
+    }
+
+    .modal .existing-annotators label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .annotator-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .annotator-chip {
+      padding: 0.5rem 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .annotator-chip:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .modal-btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .modal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(88, 166, 255, 0.3);
+    }
+
+    .modal-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .user-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(219, 97, 162, 0.15);
+      border: 1px solid rgba(219, 97, 162, 0.3);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--accent-pink);
+    }
+
+    .user-badge button {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.25rem;
+      font-size: 0.8rem;
+    }
+
+    .user-badge button:hover {
+      color: var(--accent-red);
+    }
+
+    .summary-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+      border: none;
+      border-radius: 8px;
+      color: var(--bg-dark);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .summary-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(57, 197, 207, 0.3);
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .selector {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .selector label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .selector select {
+      padding: 0.4rem 1.5rem 0.4rem 0.5rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b949e' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+    }
+
+    .selector select:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+
+    .stats-bar {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      min-width: 60px;
+    }
+
+    .stat-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat.safe .stat-value { color: var(--accent-green); }
+    .stat.safe_with_influence .stat-value { color: var(--accent-cyan); }
+    .stat.no_replanning .stat-value { color: var(--accent-red); }
+    .stat.no_other .stat-value { color: var(--accent-orange); }
+    .stat.legacy .stat-value { color: var(--accent-yellow); }
+    .stat.total .stat-value { color: var(--accent-blue); }
+    .stat.remaining .stat-value { color: var(--accent-purple); }
+
+    /* Navigation */
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg-elevated);
+      border-color: var(--accent-blue);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .task-counter {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-secondary);
+      padding: 0.5rem 1rem;
+      background: var(--bg-elevated);
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 0.4rem;
+      margin-left: auto;
+    }
+
+    .filter-btn {
+      padding: 0.4rem 0.8rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover { border-color: var(--text-secondary); }
+    .filter-btn.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: var(--bg-dark);
+    }
+
+    /* Task Card */
+    .task-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .task-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .task-badges {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .task-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: var(--bg-elevated);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .site-badge {
+      font-size: 0.7rem;
+      color: var(--accent-cyan);
+      background: rgba(57, 197, 207, 0.15);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(57, 197, 207, 0.3);
+    }
+
+    .current-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .current-mark.safe {
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--accent-green);
+      border: 1px solid rgba(63, 185, 80, 0.3);
+    }
+
+    .current-mark.safe_with_influence {
+      background: rgba(57, 197, 207, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(57, 197, 207, 0.3);
+    }
+
+    .current-mark.no_replanning {
+      background: rgba(248, 81, 73, 0.15);
+      color: var(--accent-red);
+      border: 1px solid rgba(248, 81, 73, 0.3);
+    }
+
+    .current-mark.no_other {
+      background: rgba(247, 129, 102, 0.15);
+      color: var(--accent-orange);
+      border: 1px solid rgba(247, 129, 102, 0.3);
+    }
+
+    /* Legacy marks (yes/no/maybe) - shown with warning style */
+    .current-mark.legacy {
+      background: rgba(210, 153, 34, 0.15);
+      color: var(--accent-yellow);
+      border: 1px solid rgba(210, 153, 34, 0.3);
+    }
+
+    .current-mark.unmarked {
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .task-intent {
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .task-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: var(--bg-elevated);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .meta-label {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .meta-value {
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      word-break: break-word;
+    }
+
+    /* Other Annotations */
+    .other-annotations {
+      background: var(--bg-elevated);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .other-annotations-title {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .annotation-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .annotation-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-card);
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    .annotation-item .annotator-name {
+      font-weight: 500;
+      color: var(--accent-pink);
+      min-width: 80px;
+    }
+
+    .annotation-item .mark-badge {
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .annotation-item .mark-badge.safe {
+      background: rgba(63, 185, 80, 0.2);
+      color: var(--accent-green);
+    }
+
+    .annotation-item .mark-badge.safe_with_influence {
+      background: rgba(57, 197, 207, 0.2);
+      color: var(--accent-cyan);
+    }
+
+    .annotation-item .mark-badge.no_replanning {
+      background: rgba(248, 81, 73, 0.2);
+      color: var(--accent-red);
+    }
+
+    .annotation-item .mark-badge.no_other {
+      background: rgba(247, 129, 102, 0.2);
+      color: var(--accent-orange);
+    }
+
+    /* Legacy marks */
+    .annotation-item .mark-badge.yes,
+    .annotation-item .mark-badge.no,
+    .annotation-item .mark-badge.maybe {
+      background: rgba(210, 153, 34, 0.2);
+      color: var(--accent-yellow);
+    }
+
+    .annotation-item .comment-text {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Annotation Section */
+    .annotation-section {
+      background: var(--bg-elevated);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .annotation-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .mark-btn {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .mark-btn:hover { transform: translateY(-2px); }
+
+    .mark-btn.safe:hover, .mark-btn.safe.selected {
+      border-color: var(--accent-green);
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--accent-green);
+    }
+
+    .mark-btn.safe_with_influence:hover, .mark-btn.safe_with_influence.selected {
+      border-color: var(--accent-cyan);
+      background: rgba(57, 197, 207, 0.15);
+      color: var(--accent-cyan);
+    }
+
+    .mark-btn.no_replanning:hover, .mark-btn.no_replanning.selected {
+      border-color: var(--accent-red);
+      background: rgba(248, 81, 73, 0.15);
+      color: var(--accent-red);
+    }
+
+    .mark-btn.no_other:hover, .mark-btn.no_other.selected {
+      border-color: var(--accent-orange);
+      background: rgba(247, 129, 102, 0.15);
+      color: var(--accent-orange);
+    }
+
+    .mark-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .legacy-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: rgba(210, 153, 34, 0.1);
+      border: 1px solid rgba(210, 153, 34, 0.3);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--accent-yellow);
+    }
+
+    .legacy-banner .old-mark {
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      background: rgba(210, 153, 34, 0.2);
+      border-radius: 4px;
+    }
+
+    .comment-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .comment-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      resize: vertical;
+      transition: border-color 0.2s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+
+    textarea::placeholder { color: var(--text-muted); }
+
+    .save-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.75rem;
+      transition: all 0.2s ease;
+    }
+
+    .save-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(88, 166, 255, 0.3);
+    }
+
+    .save-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      padding: 0.85rem 1.25rem;
+      background: var(--accent-green);
+      color: var(--bg-dark);
+      border-radius: 8px;
+      font-weight: 500;
+      animation: slideIn 0.3s ease;
+      z-index: 1000;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      color: var(--text-muted);
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent-blue);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .keyboard-hint {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    kbd {
+      padding: 0.2rem 0.4rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      header { flex-direction: column; gap: 1rem; }
+      .header-left { width: 100%; justify-content: center; flex-wrap: wrap; }
+      .header-controls { width: 100%; justify-content: center; }
+      .stats-bar { justify-content: center; width: 100%; }
+      .navigation { justify-content: center; }
+      .filter-group { margin-left: 0; width: 100%; justify-content: center; }
+      .mark-buttons { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal">
+      <h2>👋 Welcome</h2>
+      <p>Enter your name to start annotating tasks. Your annotations will be saved separately.</p>
+      
+      <div class="existing-annotators" id="existing-annotators-section">
+        <label>Or select an existing annotator:</label>
+        <div class="annotator-chips" id="annotator-chips"></div>
+      </div>
+      
+      <input type="text" id="annotator-input" placeholder="Enter your name..." autocomplete="off">
+      <button class="modal-btn" onclick="login()" id="login-btn">Start Annotating</button>
+    </div>
+  </div>
+
+  <div class="container" id="main-content">
+    <header>
+      <div class="header-left">
+        <h1>WebArena Annotator</h1>
+        <div class="user-badge" id="user-badge">
+          <span>👤</span>
+          <span id="current-user">-</span>
+          <button onclick="logout()" title="Switch user">✕</button>
+        </div>
+        <a href="/summary" class="summary-link">📊 Summary</a>
+      </div>
+      <div class="header-controls">
+        <div class="selector">
+          <label for="website-select">Site:</label>
+          <select id="website-select" onchange="changeWebsite()">
+            <option value="all">All</option>
+          </select>
+        </div>
+        <div class="stats-bar">
+          <div class="stat total">
+            <span class="stat-value" id="stat-total">-</span>
+            <span class="stat-label">Total</span>
+          </div>
+          <div class="stat remaining">
+            <span class="stat-value" id="stat-remaining">-</span>
+            <span class="stat-label">Left</span>
+          </div>
+          <div class="stat safe">
+            <span class="stat-value" id="stat-safe">-</span>
+            <span class="stat-label">Safe</span>
+          </div>
+          <div class="stat safe_with_influence">
+            <span class="stat-value" id="stat-safe_with_influence">-</span>
+            <span class="stat-label">Influence</span>
+          </div>
+          <div class="stat no_replanning">
+            <span class="stat-value" id="stat-no_replanning">-</span>
+            <span class="stat-label">Replan</span>
+          </div>
+          <div class="stat no_other">
+            <span class="stat-value" id="stat-no_other">-</span>
+            <span class="stat-label">Other</span>
+          </div>
+          <div class="stat legacy">
+            <span class="stat-value" id="stat-legacy">-</span>
+            <span class="stat-label">Review</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="navigation">
+      <button class="nav-btn" id="prev-btn" onclick="prevTask()">← Previous</button>
+      <span class="task-counter" id="task-counter">- / -</span>
+      <button class="nav-btn" id="next-btn" onclick="nextTask()">Next →</button>
+      
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
+        <button class="filter-btn" data-filter="unmarked" onclick="setFilter('unmarked')">Unmarked</button>
+        <button class="filter-btn" data-filter="needs_review" onclick="setFilter('needs_review')" style="color: var(--accent-yellow);">Needs Review</button>
+        <button class="filter-btn" data-filter="safe" onclick="setFilter('safe')">Safe</button>
+        <button class="filter-btn" data-filter="safe_with_influence" onclick="setFilter('safe_with_influence')">Influence</button>
+        <button class="filter-btn" data-filter="no_replanning" onclick="setFilter('no_replanning')">Replan</button>
+        <button class="filter-btn" data-filter="no_other" onclick="setFilter('no_other')">Other</button>
+      </div>
+    </div>
+
+    <div id="task-container">
+      <div class="loading"><div class="spinner"></div></div>
+    </div>
+
+    <div class="keyboard-hint">
+      <span><kbd>←</kbd> Prev</span>
+      <span><kbd>→</kbd> Next</span>
+      <span><kbd>1</kbd> Safe</span>
+      <span><kbd>2</kbd> Influence</span>
+      <span><kbd>3</kbd> Replan</span>
+      <span><kbd>4</kbd> Other</span>
+      <span><kbd>Enter</kbd> Save</span>
+    </div>
+  </div>
+
+  <script>
+    let tasks = [];
+    let filteredTasks = [];
+    let websites = [];
+    let existingAnnotators = [];
+    let currentIndex = 0;
+    let currentFilter = 'all';
+    let currentWebsite = 'all';
+    let currentAnnotator = null;
+    let selectedMark = null;
+
+    async function init() {
+      // Check for saved annotator
+      const savedAnnotator = localStorage.getItem('annotator');
+      
+      // Load existing annotators
+      const response = await fetch('/api/annotators');
+      existingAnnotators = await response.json();
+      
+      if (savedAnnotator) {
+        currentAnnotator = savedAnnotator;
+        hideLoginModal();
+        await startApp();
+      } else {
+        showLoginModal();
+      }
+    }
+
+    function showLoginModal() {
+      document.getElementById('login-modal').classList.remove('hidden');
+      document.getElementById('main-content').classList.add('hidden');
+      
+      // Show existing annotators
+      const chipsContainer = document.getElementById('annotator-chips');
+      const section = document.getElementById('existing-annotators-section');
+      
+      if (existingAnnotators.length > 0) {
+        section.classList.remove('hidden');
+        chipsContainer.innerHTML = existingAnnotators.map(a => 
+          `<div class="annotator-chip" onclick="selectExistingAnnotator('${escapeHtml(a)}')">${escapeHtml(a)}</div>`
+        ).join('');
+      } else {
+        section.classList.add('hidden');
+      }
+
+      document.getElementById('annotator-input').focus();
+    }
+
+    function hideLoginModal() {
+      document.getElementById('login-modal').classList.add('hidden');
+      document.getElementById('main-content').classList.remove('hidden');
+    }
+
+    function selectExistingAnnotator(name) {
+      document.getElementById('annotator-input').value = name;
+    }
+
+    function login() {
+      const input = document.getElementById('annotator-input');
+      const name = input.value.trim();
+      
+      if (!name) {
+        input.style.borderColor = 'var(--accent-red)';
+        return;
+      }
+      
+      currentAnnotator = name;
+      localStorage.setItem('annotator', name);
+      hideLoginModal();
+      startApp();
+    }
+
+    function logout() {
+      localStorage.removeItem('annotator');
+      currentAnnotator = null;
+      location.reload();
+    }
+
+    async function startApp() {
+      document.getElementById('current-user').textContent = currentAnnotator;
+      await loadWebsites();
+      await loadTasks();
+      await loadStats();
+      applyFilter();
+      renderTask();
+    }
+
+    async function loadWebsites() {
+      const response = await fetch('/api/websites');
+      websites = await response.json();
+      
+      const select = document.getElementById('website-select');
+      websites.forEach(site => {
+        const option = document.createElement('option');
+        option.value = site;
+        option.textContent = site;
+        select.appendChild(option);
+      });
+      
+      // Check URL for website param
+      const urlParams = new URLSearchParams(window.location.search);
+      const websiteParam = urlParams.get('website');
+      if (websiteParam && (websiteParam === 'all' || websites.includes(websiteParam))) {
+        currentWebsite = websiteParam;
+        select.value = websiteParam;
+      }
+    }
+
+    async function loadTasks() {
+      const response = await fetch(`/api/tasks?website=${currentWebsite}&annotator=${encodeURIComponent(currentAnnotator)}`);
+      tasks = await response.json();
+    }
+
+    const LEGACY_MARKS = ['yes', 'no', 'maybe'];
+    const NEW_MARKS = ['safe', 'safe_with_influence', 'no_replanning', 'no_other'];
+    
+    const MARK_LABELS = {
+      'safe': 'Safe',
+      'safe_with_influence': 'Safe (Influence)',
+      'no_replanning': 'No (Replanning)',
+      'no_other': 'No (Other)',
+      'yes': 'Yes (legacy)',
+      'no': 'No (legacy)',
+      'maybe': 'Maybe (legacy)'
+    };
+
+    function isLegacyMark(mark) {
+      return LEGACY_MARKS.includes(mark);
+    }
+
+    async function loadStats() {
+      const response = await fetch(`/api/stats?website=${currentWebsite}&annotator=${encodeURIComponent(currentAnnotator)}`);
+      const stats = await response.json();
+      
+      document.getElementById('stat-total').textContent = stats.total;
+      document.getElementById('stat-remaining').textContent = stats.remaining;
+      document.getElementById('stat-safe').textContent = stats.safe || 0;
+      document.getElementById('stat-safe_with_influence').textContent = stats.safe_with_influence || 0;
+      document.getElementById('stat-no_replanning').textContent = stats.no_replanning || 0;
+      document.getElementById('stat-no_other').textContent = stats.no_other || 0;
+      document.getElementById('stat-legacy').textContent = stats.legacy || 0;
+    }
+
+    async function changeWebsite() {
+      currentWebsite = document.getElementById('website-select').value;
+      currentIndex = 0;
+      
+      const url = new URL(window.location);
+      url.searchParams.set('website', currentWebsite);
+      window.history.pushState({}, '', url);
+      
+      await loadTasks();
+      await loadStats();
+      applyFilter();
+      renderTask();
+    }
+
+    function applyFilter() {
+      if (currentFilter === 'all') {
+        filteredTasks = [...tasks];
+      } else if (currentFilter === 'unmarked') {
+        filteredTasks = tasks.filter(t => !t.annotation);
+      } else if (currentFilter === 'needs_review') {
+        filteredTasks = tasks.filter(t => t.annotation && isLegacyMark(t.annotation.mark));
+      } else {
+        filteredTasks = tasks.filter(t => t.annotation && t.annotation.mark === currentFilter);
+      }
+      
+      if (currentIndex >= filteredTasks.length) {
+        currentIndex = Math.max(0, filteredTasks.length - 1);
+      }
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filter);
+      });
+      currentIndex = 0;
+      applyFilter();
+      renderTask();
+    }
+
+    function renderTask() {
+      const container = document.getElementById('task-container');
+      
+      if (filteredTasks.length === 0) {
+        container.innerHTML = `
+          <div class="task-card">
+            <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+              No tasks match the current filter.
+            </div>
+          </div>
+        `;
+        document.getElementById('task-counter').textContent = '0 / 0';
+        document.getElementById('prev-btn').disabled = true;
+        document.getElementById('next-btn').disabled = true;
+        return;
+      }
+
+      const task = filteredTasks[currentIndex];
+      const hasLegacyMark = task.annotation && isLegacyMark(task.annotation.mark);
+      // For legacy marks, don't pre-select; force re-annotation
+      selectedMark = (task.annotation && !hasLegacyMark) ? task.annotation.mark : null;
+      const comment = task.annotation ? task.annotation.comment : '';
+
+      let markLabel, markClass;
+      if (!task.annotation) {
+        markLabel = 'UNMARKED';
+        markClass = 'unmarked';
+      } else if (hasLegacyMark) {
+        markLabel = `⚠ ${task.annotation.mark.toUpperCase()} (needs review)`;
+        markClass = 'legacy';
+      } else {
+        markLabel = MARK_LABELS[task.annotation.mark] || task.annotation.mark;
+        markClass = task.annotation.mark;
+      }
+
+      const siteBadges = (task.sites || []).map(s => `<span class="site-badge">${escapeHtml(s)}</span>`).join('');
+
+      // Other annotators' annotations
+      const otherAnnotations = Object.entries(task.all_annotations || {})
+        .filter(([name]) => name !== currentAnnotator)
+        .map(([name, ann]) => {
+          const isLegacy = isLegacyMark(ann.mark);
+          const badgeClass = isLegacy ? 'yes' : ann.mark;
+          const label = isLegacy ? `${ann.mark} (legacy)` : (MARK_LABELS[ann.mark] || ann.mark);
+          return `
+            <div class="annotation-item">
+              <span class="annotator-name">${escapeHtml(name)}</span>
+              <span class="mark-badge ${badgeClass}">${escapeHtml(label)}</span>
+              <span class="comment-text">${ann.comment ? escapeHtml(ann.comment) : '—'}</span>
+            </div>
+          `;
+        }).join('');
+
+      const otherAnnotationsSection = otherAnnotations ? `
+        <div class="other-annotations">
+          <div class="other-annotations-title">Other Annotations (${Object.keys(task.all_annotations || {}).filter(n => n !== currentAnnotator).length})</div>
+          <div class="annotation-list">${otherAnnotations}</div>
+        </div>
+      ` : '';
+
+      // Legacy banner
+      const legacyBanner = hasLegacyMark ? `
+        <div class="legacy-banner">
+          ⚠ Previous annotation used old category: <span class="old-mark">${task.annotation.mark.toUpperCase()}</span>
+          — please re-classify with the new categories below.
+        </div>
+      ` : '';
+
+      container.innerHTML = `
+        <div class="task-card">
+          <div class="task-header">
+            <div class="task-badges">
+              <span class="task-id">Task #${task.task_id}</span>
+              ${siteBadges}
+            </div>
+            <span class="current-mark ${markClass}">${markLabel}</span>
+          </div>
+          
+          <div class="task-intent">${escapeHtml(task.intent)}</div>
+          
+          <div class="task-meta">
+            <div class="meta-item">
+              <span class="meta-label">Template ID</span>
+              <span class="meta-value">${task.intent_template_id || 'N/A'}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Start URL</span>
+              <span class="meta-value">${task.start_url || 'N/A'}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Requires Login</span>
+              <span class="meta-value">${task.require_login ? 'Yes' : 'No'}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Requires Reset</span>
+              <span class="meta-value">${task.require_reset ? 'Yes' : 'No'}</span>
+            </div>
+          </div>
+
+          ${otherAnnotationsSection}
+
+          <div class="annotation-section">
+            <div class="annotation-title">Your Annotation</div>
+            
+            ${legacyBanner}
+
+            <div class="mark-buttons">
+              <button class="mark-btn safe ${selectedMark === 'safe' ? 'selected' : ''}" onclick="selectMark('safe')">
+                <span style="font-size:1.1em">✓</span> Safe
+              </button>
+              <button class="mark-btn safe_with_influence ${selectedMark === 'safe_with_influence' ? 'selected' : ''}" onclick="selectMark('safe_with_influence')">
+                <span style="font-size:1.1em">~</span> Safe (Influence)
+              </button>
+              <button class="mark-btn no_replanning ${selectedMark === 'no_replanning' ? 'selected' : ''}" onclick="selectMark('no_replanning')">
+                <span style="font-size:1.1em">✗</span> No (Replanning)
+              </button>
+              <button class="mark-btn no_other ${selectedMark === 'no_other' ? 'selected' : ''}" onclick="selectMark('no_other')">
+                <span style="font-size:1.1em">✗</span> No (Other)
+              </button>
+            </div>
+
+            <div class="comment-section">
+              <label class="comment-label">Comment (optional)</label>
+              <textarea id="comment" placeholder="Add any notes...">${escapeHtml(comment)}</textarea>
+            </div>
+
+            <button class="save-btn" onclick="saveAnnotation()" id="save-btn">${hasLegacyMark ? 'Update Annotation' : 'Save Annotation'}</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('task-counter').textContent = `${currentIndex + 1} / ${filteredTasks.length}`;
+      document.getElementById('prev-btn').disabled = currentIndex === 0;
+      document.getElementById('next-btn').disabled = currentIndex >= filteredTasks.length - 1;
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function selectMark(mark) {
+      selectedMark = mark;
+      document.querySelectorAll('.mark-btn').forEach(btn => {
+        btn.classList.remove('selected');
+      });
+      const selected = document.querySelector(`.mark-btn.${mark}`);
+      if (selected) selected.classList.add('selected');
+    }
+
+    async function saveAnnotation() {
+      if (!selectedMark) {
+        showToast('Please select a category', 'error');
+        return;
+      }
+
+      const task = filteredTasks[currentIndex];
+      const comment = document.getElementById('comment').value;
+
+      const saveBtn = document.getElementById('save-btn');
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving...';
+
+      try {
+        const response = await fetch(`/api/annotations/${task.task_id}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mark: selectedMark, comment, annotator: currentAnnotator })
+        });
+
+        if (response.ok) {
+          // Update local data
+          const taskInAll = tasks.find(t => t.task_id === task.task_id);
+          if (taskInAll) {
+            taskInAll.annotation = { mark: selectedMark, comment };
+            if (!taskInAll.all_annotations) taskInAll.all_annotations = {};
+            taskInAll.all_annotations[currentAnnotator] = { mark: selectedMark, comment };
+          }
+          
+          showToast('Saved!');
+          await loadStats();
+          
+          // Auto-advance
+          if (currentIndex < filteredTasks.length - 1) {
+            setTimeout(() => nextTask(), 400);
+          } else {
+            renderTask();
+          }
+        } else {
+          showToast('Failed to save', 'error');
+        }
+      } catch (error) {
+        showToast('Error saving', 'error');
+      }
+
+      saveBtn.disabled = false;
+      saveBtn.textContent = 'Save Annotation';
+    }
+
+    function prevTask() {
+      if (currentIndex > 0) { currentIndex--; renderTask(); }
+    }
+
+    function nextTask() {
+      if (currentIndex < filteredTasks.length - 1) { currentIndex++; renderTask(); }
+    }
+
+    function showToast(message, type = 'success') {
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = message;
+      if (type === 'error') toast.style.background = 'var(--accent-red)';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2000);
+    }
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') {
+        if (e.key === 'Enter' && e.ctrlKey) saveAnnotation();
+        if (e.key === 'Enter' && e.target.id === 'annotator-input') login();
+        return;
+      }
+
+      switch (e.key) {
+        case 'ArrowLeft': prevTask(); break;
+        case 'ArrowRight': nextTask(); break;
+        case '1': selectMark('safe'); break;
+        case '2': selectMark('safe_with_influence'); break;
+        case '3': selectMark('no_replanning'); break;
+        case '4': selectMark('no_other'); break;
+        case 'Enter': saveAnnotation(); break;
+      }
+    });
+
+    init();
+  </script>
+</body>
+</html>
