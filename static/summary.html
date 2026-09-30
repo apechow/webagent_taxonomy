@@ -554,7 +554,7 @@
   <script>
     let summaryData = null;
     let taskFilter = 'all';
-    
+
     const MARK_LABELS = {
       'safe': 'Safe',
       'safe_with_influence': 'Safe (Influence)',
@@ -564,6 +564,7 @@
       'no': 'No (legacy)',
       'maybe': 'Maybe (legacy)'
     };
+    const NEW_MARKS = ['safe', 'safe_with_influence', 'no_replanning', 'no_other'];
 
     async function init() {
       const response = await fetch('/api/summary');
@@ -573,8 +574,9 @@
 
     function render() {
       const content = document.getElementById('content');
+      const { overall, marks, by_website, annotated_tasks } = summaryData;
 
-      if (!summaryData.annotators || summaryData.annotators.length === 0) {
+      if (!overall.tasks_annotated) {
         content.innerHTML = `
           <div class="empty-state">
             <h2>No annotations yet</h2>
@@ -585,123 +587,50 @@
         return;
       }
 
-      const { overall, annotators, annotator_stats, by_website, agreement, annotated_tasks } = summaryData;
+      const legacyTotal = (marks.yes || 0) + (marks.no || 0) + (marks.maybe || 0);
 
-      // Overall agreement styling
-      const agreementClass = agreement.overall_agreement >= 80 ? 'good' : 
-                            agreement.overall_agreement >= 60 ? 'medium' : 'low';
-
-      // Render pairwise agreement
-      let pairwiseHtml = '';
-      if (Object.keys(agreement.pairwise).length > 0) {
-        const pairwiseRows = Object.values(agreement.pairwise).map(p => {
-          const badgeClass = p.agreement_percent >= 80 ? 'high' : 
-                            p.agreement_percent >= 60 ? 'medium' : 'low';
-          return `
-            <tr>
-              <td>
-                <div class="pair-names">
-                  <span>${escapeHtml(p.annotator1)}</span>
-                  <span class="vs">vs</span>
-                  <span>${escapeHtml(p.annotator2)}</span>
-                </div>
-              </td>
-              <td>${p.total}</td>
-              <td>${p.agreed}</td>
-              <td><span class="agreement-badge ${badgeClass}">${p.agreement_percent !== null ? p.agreement_percent + '%' : 'N/A'}</span></td>
-            </tr>
-          `;
-        }).join('');
-
-        pairwiseHtml = `
-          <table class="pairwise-table">
-            <thead>
-              <tr>
-                <th>Annotators</th>
-                <th>Common Tasks</th>
-                <th>Agreed</th>
-                <th>Agreement</th>
-              </tr>
-            </thead>
-            <tbody>${pairwiseRows}</tbody>
-          </table>
-        `;
-      }
-
-      // Render disagreements
-      let disagreementsHtml = '';
-      if (agreement.tasks_with_disagreement && agreement.tasks_with_disagreement.length > 0) {
-        const disagreementRows = agreement.tasks_with_disagreement.slice(0, 20).map(t => {
-          const annotationBadges = Object.entries(t.annotations).map(([name, ann]) => 
-            `<span class="mini-badge ${ann.mark}">${escapeHtml(name)}: ${MARK_LABELS[ann.mark] || ann.mark}</span>`
-          ).join('');
-          return `
-            <tr>
-              <td>#${t.task_id}</td>
-              <td class="task-intent-cell" title="${escapeHtml(t.intent)}">${escapeHtml(t.intent)}</td>
-              <td><div class="annotations-cell">${annotationBadges}</div></td>
-            </tr>
-          `;
-        }).join('');
-
-        disagreementsHtml = `
-          <div class="section">
-            <div class="section-title">⚠️ Tasks with Disagreement (${agreement.tasks_with_disagreement.length})</div>
-            <table class="disagreements-table">
-              <thead>
-                <tr>
-                  <th>Task</th>
-                  <th>Intent</th>
-                  <th>Annotations</th>
-                </tr>
-              </thead>
-              <tbody>${disagreementRows}</tbody>
-            </table>
-          </div>
-        `;
-      }
-
-      // Render annotator cards
-      const annotatorCards = annotators.map(name => {
-        const stats = annotator_stats[name];
-        return `
-          <div class="annotator-card">
-            <div class="annotator-name">👤 ${escapeHtml(name)}</div>
-            <div class="annotator-stats">
-              <div class="annotator-stat total">
-                <div class="annotator-stat-value">${stats.total_annotated}</div>
-                <div class="annotator-stat-label">Done</div>
-              </div>
-              <div class="annotator-stat safe">
-                <div class="annotator-stat-value">${stats.safe || 0}</div>
-                <div class="annotator-stat-label">Safe</div>
-              </div>
-              <div class="annotator-stat safe_with_influence">
-                <div class="annotator-stat-value">${stats.safe_with_influence || 0}</div>
-                <div class="annotator-stat-label">Influence</div>
-              </div>
-              <div class="annotator-stat no_replanning">
-                <div class="annotator-stat-value">${stats.no_replanning || 0}</div>
-                <div class="annotator-stat-label">Replan</div>
-              </div>
-              <div class="annotator-stat no_other">
-                <div class="annotator-stat-value">${stats.no_other || 0}</div>
-                <div class="annotator-stat-label">Other</div>
-              </div>
-              <div class="annotator-stat legacy">
-                <div class="annotator-stat-value">${stats.legacy || 0}</div>
-                <div class="annotator-stat-label">Review</div>
-              </div>
+      // Mark distribution card (reuses the annotator-card styling)
+      const distributionCard = `
+        <div class="annotator-card">
+          <div class="annotator-name">All tasks</div>
+          <div class="annotator-stats">
+            <div class="annotator-stat total">
+              <div class="annotator-stat-value">${overall.tasks_annotated}</div>
+              <div class="annotator-stat-label">Done</div>
+            </div>
+            <div class="annotator-stat safe">
+              <div class="annotator-stat-value">${marks.safe || 0}</div>
+              <div class="annotator-stat-label">Safe</div>
+            </div>
+            <div class="annotator-stat safe_with_influence">
+              <div class="annotator-stat-value">${marks.safe_with_influence || 0}</div>
+              <div class="annotator-stat-label">Influence</div>
+            </div>
+            <div class="annotator-stat no_replanning">
+              <div class="annotator-stat-value">${marks.no_replanning || 0}</div>
+              <div class="annotator-stat-label">Replan</div>
+            </div>
+            <div class="annotator-stat no_other">
+              <div class="annotator-stat-value">${marks.no_other || 0}</div>
+              <div class="annotator-stat-label">Other</div>
+            </div>
+            <div class="annotator-stat legacy">
+              <div class="annotator-stat-value">${legacyTotal}</div>
+              <div class="annotator-stat-label">Review</div>
             </div>
           </div>
-        `;
-      }).join('');
+        </div>
+      `;
 
-      // Render website cards
+      // Website cards with per-mark breakdown
       const websiteCards = Object.entries(by_website)
         .sort((a, b) => b[1].total - a[1].total)
         .map(([name, stats]) => {
           const percent = stats.total > 0 ? Math.round(stats.annotated / stats.total * 100) : 0;
+          const breakdown = NEW_MARKS
+            .filter(m => stats[m])
+            .map(m => `<span class="mini-badge ${m}">${MARK_LABELS[m]}: ${stats[m]}</span>`)
+            .join(' ');
           return `
             <div class="website-card">
               <div class="website-name">${escapeHtml(name)}</div>
@@ -712,40 +641,56 @@
               <div class="website-bar">
                 <div class="website-bar-fill" style="width: ${percent}%"></div>
               </div>
+              <div class="annotations-cell" style="margin-top: 0.5rem;">${breakdown}</div>
             </div>
           `;
         }).join('');
 
-      // Filter tasks based on taskFilter
-      const LEGACY_MARKS = ['yes', 'no', 'maybe'];
-      let filteredAnnotatedTasks = annotated_tasks;
-      if (taskFilter === 'legacy') {
-        filteredAnnotatedTasks = annotated_tasks.filter(t => {
-          // Show tasks where any annotation uses a legacy mark
-          return Object.values(t.annotations).some(a => LEGACY_MARKS.includes(a.mark));
-        });
-      } else if (taskFilter !== 'all') {
-        filteredAnnotatedTasks = annotated_tasks.filter(t => t.consensus === taskFilter);
+      // Disputed tasks (more than one mark after aggregation)
+      const disputedTasks = annotated_tasks.filter(t => t.status === 'disputed');
+      let disputedHtml = '';
+      if (disputedTasks.length > 0) {
+        const rows = disputedTasks.slice(0, 20).map(t => `
+          <tr>
+            <td>#${t.task_id}</td>
+            <td class="task-intent-cell" title="${escapeHtml(t.intent)}">${escapeHtml(t.intent)}</td>
+            <td><div class="annotations-cell">${t.marks.map(m => `<span class="mini-badge ${m}">${MARK_LABELS[m] || m}</span>`).join('')}</div></td>
+          </tr>
+        `).join('');
+        disputedHtml = `
+          <div class="section">
+            <div class="section-title">⚠️ Disputed Tasks (${disputedTasks.length})</div>
+            <table class="disagreements-table">
+              <thead><tr><th>Task</th><th>Intent</th><th>Marks</th></tr></thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+        `;
       }
 
-      // Render annotated tasks table
-      const taskRows = filteredAnnotatedTasks.slice(0, 100).map(t => {
-        const annotationBadges = Object.entries(t.annotations).map(([name, ann]) => 
-          `<span class="mini-badge ${ann.mark}" title="${escapeHtml(name)}">${escapeHtml(name.charAt(0).toUpperCase())}</span>`
-        ).join('');
+      // Task table filter
+      let filtered = annotated_tasks;
+      if (taskFilter === 'legacy') {
+        filtered = annotated_tasks.filter(t => t.legacy);
+      } else if (taskFilter !== 'all') {
+        filtered = annotated_tasks.filter(t => t.status === taskFilter);
+      }
+
+      const taskRows = filtered.slice(0, 100).map(t => {
+        const statusLabel = t.status === 'disputed' ? 'DISPUTED' : (MARK_LABELS[t.status] || t.status).toUpperCase();
+        const commentTitle = t.comments.join('\n\n');
         return `
           <tr>
             <td>#${t.task_id}</td>
             <td class="task-intent-cell" title="${escapeHtml(t.intent)}">${escapeHtml(t.intent)}</td>
-            <td>${t.sites.map(s => `<span class="mini-badge" style="background: rgba(57,197,207,0.2); color: var(--accent-cyan);">${s}</span>`).join(' ')}</td>
-            <td><span class="consensus-badge ${t.consensus}">${t.consensus.toUpperCase()}</span></td>
-            <td><div class="annotations-cell">${annotationBadges}</div></td>
+            <td>${t.sites.map(s => `<span class="mini-badge" style="background: rgba(57,197,207,0.2); color: var(--accent-cyan);">${escapeHtml(s)}</span>`).join(' ')}</td>
+            <td><span class="consensus-badge ${t.status}">${statusLabel}</span></td>
+            <td class="task-intent-cell" title="${escapeHtml(commentTitle)}">${t.comments.length ? escapeHtml(t.comments.length > 1 ? `${t.comments.length} comments` : t.comments[0]) : '—'}</td>
           </tr>
         `;
       }).join('');
 
       content.innerHTML = `
-        <!-- Overall Stats -->
         <div class="stats-grid">
           <div class="stat-card">
             <h3>Overall Progress</h3>
@@ -755,46 +700,32 @@
               <div class="progress-fill" style="width: ${overall.progress_percent}%"></div>
             </div>
           </div>
-          
+
           <div class="stat-card">
-            <h3>Annotators</h3>
-            <div class="big-number">${annotators.length}</div>
-            <div class="stat-subtitle">people contributing annotations</div>
+            <h3>Safe vs Unsafe</h3>
+            <div class="big-number">${(marks.safe || 0) + (marks.safe_with_influence || 0)} / ${(marks.no_replanning || 0) + (marks.no_other || 0)}</div>
+            <div class="stat-subtitle">safe (incl. influence) / unsafe (replanning + other)</div>
           </div>
-          
+
           <div class="stat-card">
-            <h3>Inter-Annotator Agreement</h3>
-            <div class="agreement-value ${agreementClass}">${agreement.overall_agreement !== null ? agreement.overall_agreement + '%' : 'N/A'}</div>
-            <div class="stat-subtitle">
-              ${agreement.full_agreement_count} / ${agreement.multi_annotated_count} tasks with full consensus
-            </div>
+            <h3>Needs Attention</h3>
+            <div class="agreement-value ${(overall.disputed + overall.legacy) ? 'medium' : 'good'}">${overall.disputed + overall.legacy}</div>
+            <div class="stat-subtitle">${overall.disputed} disputed · ${overall.legacy} legacy marks</div>
           </div>
         </div>
 
-        <!-- Annotator Stats -->
         <div class="section">
-          <div class="section-title">👥 Annotator Statistics</div>
-          <div class="annotator-grid">${annotatorCards}</div>
+          <div class="section-title">🏷️ Mark Distribution</div>
+          <div class="annotator-grid">${distributionCard}</div>
         </div>
 
-        <!-- Pairwise Agreement -->
-        ${Object.keys(agreement.pairwise).length > 0 ? `
-        <div class="section">
-          <div class="section-title">🤝 Pairwise Agreement</div>
-          ${pairwiseHtml}
-        </div>
-        ` : ''}
+        ${disputedHtml}
 
-        <!-- Disagreements -->
-        ${disagreementsHtml}
-
-        <!-- Website Progress -->
         <div class="section">
           <div class="section-title">🌐 Progress by Website</div>
           <div class="website-grid">${websiteCards}</div>
         </div>
 
-        <!-- All Annotated Tasks -->
         <div class="section">
           <div class="section-title">📝 Annotated Tasks (${annotated_tasks.length})</div>
           <div class="filter-tabs">
@@ -813,14 +744,14 @@
                   <th>Task</th>
                   <th>Intent</th>
                   <th>Sites</th>
-                  <th>Consensus</th>
-                  <th>Annotators</th>
+                  <th>Mark</th>
+                  <th>Comment</th>
                 </tr>
               </thead>
               <tbody>${taskRows}</tbody>
             </table>
           </div>
-          ${filteredAnnotatedTasks.length > 100 ? `<p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.85rem;">Showing first 100 of ${filteredAnnotatedTasks.length} tasks</p>` : ''}
+          ${filtered.length > 100 ? `<p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.85rem;">Showing first 100 of ${filtered.length} tasks</p>` : ''}
         </div>
       `;
     }
@@ -840,7 +771,7 @@
     async function exportData() {
       const response = await fetch('/api/export');
       const data = await response.json();
-      
+
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');

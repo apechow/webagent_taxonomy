@@ -1,5066 +1,3262 @@
 {
   "0": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "1": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "2": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "3": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "4": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "5": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "6": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "7": {
-    "Person3": {
-      "comment": "Deterministic spatial query: search airports in area, filter by distance and type",
-      "mark": "safe"
-    }
+    "comment": "Deterministic spatial query: search airports in area, filter by distance and type",
+    "mark": "safe"
   },
   "8": {
-    "Person3": {
-      "comment": "Deterministic spatial query: search airports in area, filter by distance and type",
-      "mark": "safe"
-    }
+    "comment": "Deterministic spatial query: search airports in area, filter by distance and type",
+    "mark": "safe"
   },
   "9": {
-    "Person3": {
-      "comment": "Deterministic spatial query: search airports in area, filter by distance and type",
-      "mark": "safe"
-    }
+    "comment": "Deterministic spatial query: search airports in area, filter by distance and type",
+    "mark": "safe"
   },
   "10": {
-    "Person3": {
-      "comment": "Deterministic spatial query: search airports in area, filter by distance and type",
-      "mark": "safe"
-    }
+    "comment": "Deterministic spatial query: search airports in area, filter by distance and type",
+    "mark": "safe"
   },
   "11": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "12": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "13": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "14": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "15": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "16": {
-    "Person3": {
-      "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
-      "mark": "safe"
-    }
+    "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
+    "mark": "safe"
   },
   "17": {
-    "Person3": {
-      "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
-      "mark": "safe"
-    }
+    "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
+    "mark": "safe"
   },
   "18": {
-    "Person3": {
-      "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
-      "mark": "safe"
-    }
+    "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
+    "mark": "safe"
   },
   "19": {
-    "Person3": {
-      "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
-      "mark": "safe"
-    }
+    "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
+    "mark": "safe"
   },
   "20": {
-    "Person3": {
-      "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
-      "mark": "safe"
-    }
+    "comment": "Deterministic route comparison: get_route(A, B, \"walk\") vs get_route(A, B, \"drive\")",
+    "mark": "safe"
   },
   "21": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "22": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "23": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "24": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "25": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "26": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "27": {
-    "Person5": {
-      "comment": "post = get_post(-1, \"Showerthoughts\")\ncomments = get_comments(post)\ncount = 0\nfor comment in comments: if comment.num_downvotes > comment.num_upvotes then count ++\n",
-      "mark": "safe"
-    }
+    "comment": "post = get_post(-1, \"Showerthoughts\")\ncomments = get_comments(post)\ncount = 0\nfor comment in comments: if comment.num_downvotes > comment.num_upvotes then count ++",
+    "mark": "safe"
   },
   "28": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "29": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "30": {
-    "Person5": {
-      "comment": "- ",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "31": {
-    "Person5": {
-      "comment": "- ",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "32": {
-    "Person3": {
-      "comment": "\"local company\" requires fuzzy matching or LLM judgment on search results",
-      "mark": "safe_with_influence"
-    }
+    "comment": "\"local company\" requires fuzzy matching or LLM judgment on search results",
+    "mark": "safe_with_influence"
   },
   "33": {
-    "Person3": {
-      "comment": "Deterministic: search hotel by brand near airport, find nearest supermarket, calc distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search hotel by brand near airport, find nearest supermarket, calc distance",
+    "mark": "safe"
   },
   "34": {
-    "Person3": {
-      "comment": "Deterministic: search hotel by brand near airport, find nearest supermarket, calc distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search hotel by brand near airport, find nearest supermarket, calc distance",
+    "mark": "safe"
   },
   "35": {
-    "Person3": {
-      "comment": "Deterministic: search hotel by brand near airport, find nearest supermarket, calc distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search hotel by brand near airport, find nearest supermarket, calc distance",
+    "mark": "safe"
   },
   "36": {
-    "Person3": {
-      "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
+    "mark": "safe"
   },
   "37": {
-    "Person3": {
-      "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
+    "mark": "safe"
   },
   "38": {
-    "Person3": {
-      "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
+    "mark": "safe"
   },
   "39": {
-    "Person3": {
-      "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
+    "mark": "safe"
   },
   "40": {
-    "Person3": {
-      "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_drive_time(A, B) < 60 minutes",
+    "mark": "safe"
   },
   "41": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "42": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "43": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "44": {
-    "Person6": {
-      "comment": "navigate_to(my_todos)",
-      "mark": "safe"
-    }
+    "comment": "navigate_to(my_todos)",
+    "mark": "safe"
   },
   "45": {
-    "Person6": {
-      "comment": "navigate_to(recent_open_issues)",
-      "mark": "safe"
-    }
+    "comment": "navigate_to(recent_open_issues)",
+    "mark": "safe"
   },
   "46": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "47": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "48": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "49": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "50": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "51": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "52": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").duration",
+    "mark": "safe"
   },
   "53": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").duration",
+    "mark": "safe"
   },
   "54": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").duration",
+    "mark": "safe"
   },
   "55": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").duration",
+    "mark": "safe"
   },
   "56": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").duration",
+    "mark": "safe"
   },
   "57": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
+    "mark": "safe"
   },
   "58": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
+    "mark": "safe"
   },
   "59": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
+    "mark": "safe"
   },
   "60": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
+    "mark": "safe"
   },
   "61": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location, sort_by=distance, limit=1)",
+    "mark": "safe"
   },
   "62": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "63": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "64": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "65": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "66": {
-    "Person5": {
-      "comment": "posts = get_top_post(10, \"books\")\npost_urls = []\nfor post in posts: if DANGER(LLM(\"is this recommending a single book\", post.contents)) then post_urls.add(post.url)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "posts = get_top_post(10, \"books\")\npost_urls = []\nfor post in posts: if DANGER(LLM(\"is this recommending a single book\", post.contents)) then post_urls.add(post.url)",
+    "mark": "safe_with_influence"
   },
   "67": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "68": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "69": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "70": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).zip_code",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).zip_code",
+    "mark": "safe"
   },
   "71": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).zip_code",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).zip_code",
+    "mark": "safe"
   },
   "72": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).zip_code",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).zip_code",
+    "mark": "safe"
   },
   "73": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).zip_code",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).zip_code",
+    "mark": "safe"
   },
   "74": {
-    "Person3": {
-      "comment": "Deterministic TSP: calculate all permutations, pick shortest total time",
-      "mark": "safe"
-    }
+    "comment": "Deterministic TSP: calculate all permutations, pick shortest total time",
+    "mark": "safe"
   },
   "75": {
-    "Person3": {
-      "comment": "Deterministic TSP: calculate all permutations, pick shortest total time",
-      "mark": "safe"
-    }
+    "comment": "Deterministic TSP: calculate all permutations, pick shortest total time",
+    "mark": "safe"
   },
   "76": {
-    "Person3": {
-      "comment": "Deterministic TSP: calculate all permutations, pick shortest total time",
-      "mark": "safe"
-    }
+    "comment": "Deterministic TSP: calculate all permutations, pick shortest total time",
+    "mark": "safe"
   },
   "77": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "78": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "79": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "80": {
-    "Person3": {
-      "comment": "Deterministic: walk_time(A,B) + drive_time(B,C)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: walk_time(A,B) + drive_time(B,C)",
+    "mark": "safe"
   },
   "81": {
-    "Person3": {
-      "comment": "Deterministic: walk_time(A,B) + drive_time(B,C)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: walk_time(A,B) + drive_time(B,C)",
+    "mark": "safe"
   },
   "82": {
-    "Person3": {
-      "comment": "Deterministic: walk_time(A,B) + drive_time(B,C)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: walk_time(A,B) + drive_time(B,C)",
+    "mark": "safe"
   },
   "83": {
-    "Person3": {
-      "comment": "Deterministic: walk_time(A,B) + drive_time(B,C)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: walk_time(A,B) + drive_time(B,C)",
+    "mark": "safe"
   },
   "84": {
-    "Person3": {
-      "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
+    "mark": "safe"
   },
   "85": {
-    "Person3": {
-      "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
+    "mark": "safe"
   },
   "86": {
-    "Person3": {
-      "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
+    "mark": "safe"
   },
   "87": {
-    "Person3": {
-      "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
+    "mark": "safe"
   },
   "88": {
-    "Person3": {
-      "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get hotel location, get_drive_time(hotel, destination)",
+    "mark": "safe"
   },
   "89": {
-    "Person3": {
-      "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
+    "mark": "safe"
   },
   "90": {
-    "Person3": {
-      "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
+    "mark": "safe"
   },
   "91": {
-    "Person3": {
-      "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
+    "mark": "safe"
   },
   "92": {
-    "Person3": {
-      "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
+    "mark": "safe"
   },
   "93": {
-    "Person3": {
-      "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_state(name).bordering_states (from structured data)",
+    "mark": "safe"
   },
   "94": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "95": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "96": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "97": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires LLM/knowledge to determine \"top CS school in Massachusetts\" from user intent",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires LLM/knowledge to determine \"top CS school in Massachusetts\" from user intent",
+    "mark": "safe_with_influence"
   },
   "98": {
-    "Person3": {
-      "comment": "Deterministic: search nearest X to location, get distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search nearest X to location, get distance",
+    "mark": "safe"
   },
   "99": {
-    "Person3": {
-      "comment": "Deterministic: search nearest X to location, get distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search nearest X to location, get distance",
+    "mark": "safe"
   },
   "100": {
-    "Person3": {
-      "comment": "Deterministic: search nearest X to location, get distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search nearest X to location, get distance",
+    "mark": "safe"
   },
   "101": {
-    "Person3": {
-      "comment": "Deterministic search (will return no results as In-N-Out not in Pittsburgh)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic search (will return no results as In-N-Out not in Pittsburgh)",
+    "mark": "safe"
   },
   "102": {
-    "Person6": {
-      "comment": "issues = get_issues(repo, label='help needed')\ndisplay(issues)",
-      "mark": "safe"
-    }
+    "comment": "issues = get_issues(repo, label='help needed')\ndisplay(issues)",
+    "mark": "safe"
   },
   "103": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "104": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "105": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "106": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "107": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "108": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "109": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "110": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "111": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "112": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "113": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "114": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "115": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "116": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "117": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "118": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "119": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "120": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "121": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "122": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "123": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "124": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "125": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "126": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "127": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "128": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "129": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "130": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "131": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "132": {
-    "Person6": {
-      "comment": "commits = get_commits(repo, author='kilian', date='3/5/2023')\nreturn len(commits)",
-      "mark": "safe"
-    }
+    "comment": "commits = get_commits(repo, author='kilian', date='3/5/2023')\nreturn len(commits)",
+    "mark": "safe"
   },
   "133": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "134": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "135": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "136": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "137": {
-    "Person3": {
-      "comment": "Requires LLM/knowledge to resolve city references (Liberty Bell->Philadelphia, big apple->NYC, etc.)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires LLM/knowledge to resolve city references (Liberty Bell->Philadelphia, big apple->NYC, etc.)",
+    "mark": "safe_with_influence"
   },
   "138": {
-    "Person3": {
-      "comment": "Requires LLM/knowledge to resolve city references (Liberty Bell->Philadelphia, big apple->NYC, etc.)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires LLM/knowledge to resolve city references (Liberty Bell->Philadelphia, big apple->NYC, etc.)",
+    "mark": "safe_with_influence"
   },
   "139": {
-    "Person3": {
-      "comment": "Requires LLM/knowledge to resolve city references (Liberty Bell->Philadelphia, big apple->NYC, etc.)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires LLM/knowledge to resolve city references (Liberty Bell->Philadelphia, big apple->NYC, etc.)",
+    "mark": "safe_with_influence"
   },
   "140": {
-    "Person3": {
-      "comment": "Requires LLM/knowledge to resolve city references (Liberty Bell->Philadelphia, big apple->NYC, etc.)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires LLM/knowledge to resolve city references (Liberty Bell->Philadelphia, big apple->NYC, etc.)",
+    "mark": "safe_with_influence"
   },
   "141": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "142": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "143": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "144": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "145": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "146": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "147": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "148": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "149": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "150": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "151": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"drive\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"drive\").duration",
+    "mark": "safe"
   },
   "152": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"drive\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"drive\").duration",
+    "mark": "safe"
   },
   "153": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"drive\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"drive\").duration",
+    "mark": "safe"
   },
   "154": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"drive\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"drive\").duration",
+    "mark": "safe"
   },
   "155": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"drive\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"drive\").duration",
+    "mark": "safe"
   },
   "156": {
-    "Person6": {
-      "comment": "navigate_to(merge_requests_assigned_to_me)",
-      "mark": "safe"
-    }
+    "comment": "navigate_to(merge_requests_assigned_to_me)",
+    "mark": "safe"
   },
   "157": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "158": {
-    "Person2": {
-      "comment": "The agent will not know ahead of time how the product data will be structured, so without using an llm the best they can do is using regexes to filter valid storate options, which will likely result in errors. ",
-      "mark": "safe_with_influence"
-    }
+    "comment": "The agent will not know ahead of time how the product data will be structured, so without using an llm the best they can do is using regexes to filter valid storate options, which will likely result in errors.",
+    "mark": "safe_with_influence"
   },
   "159": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "160": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "161": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "162": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "163": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "164": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "165": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "166": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "167": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "168": {
-    "Person6": {
-      "comment": "repos = get_my_contributed_repos()\nreturn [r.name for r in repos if r.stars > 100]",
-      "mark": "safe"
-    }
+    "comment": "repos = get_my_contributed_repos()\nreturn [r.name for r in repos if r.stars > 100]",
+    "mark": "safe"
   },
   "169": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "170": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "171": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "172": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "173": {
-    "Person6": {
-      "comment": "issue = get_my_issues(keyword='better', sort='updated')[-1]\nreturn issue.is_closed",
-      "mark": "safe"
-    }
+    "comment": "issue = get_my_issues(keyword='better', sort='updated')[-1]\nreturn issue.is_closed",
+    "mark": "safe"
   },
   "174": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "175": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "176": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "177": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "178": {
-    "Person6": {
-      "comment": "issue = get_my_issues(keyword='better', sort='created')[-1]\nreturn issue.is_closed",
-      "mark": "safe"
-    }
+    "comment": "issue = get_my_issues(keyword='better', sort='created')[-1]\nreturn issue.is_closed",
+    "mark": "safe"
   },
   "179": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "180": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "181": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "182": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "183": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "184": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "185": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "186": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "187": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "188": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "189": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "190": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "191": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "192": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "193": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "194": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "195": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "196": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "197": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "198": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "199": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "200": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "201": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "202": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "203": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "204": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "205": {
-    "Person6": {
-      "comment": "commits = get_commits(author='kilian', date='3/5/2023')\nreturn len(commits)",
-      "mark": "safe"
-    }
+    "comment": "commits = get_commits(author='kilian', date='3/5/2023')\nreturn len(commits)",
+    "mark": "safe"
   },
   "206": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "207": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "208": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "209": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "210": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "211": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "212": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "213": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "214": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "215": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "216": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "217": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "218": {
-    "Person3": {
-      "comment": "Deterministic: search hotels near location, filter by walk_time <= X minutes",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search hotels near location, filter by walk_time <= X minutes",
+    "mark": "safe"
   },
   "219": {
-    "Person3": {
-      "comment": "Deterministic: search hotels near location, filter by walk_time <= X minutes",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search hotels near location, filter by walk_time <= X minutes",
+    "mark": "safe"
   },
   "220": {
-    "Person3": {
-      "comment": "Deterministic: search hotels near location, filter by walk_time <= X minutes",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search hotels near location, filter by walk_time <= X minutes",
+    "mark": "safe"
   },
   "221": {
-    "Person3": {
-      "comment": "Deterministic: find nearest X, calculate time with each transport mode",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find nearest X, calculate time with each transport mode",
+    "mark": "safe"
   },
   "222": {
-    "Person3": {
-      "comment": "Deterministic: find nearest X, calculate time with each transport mode",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find nearest X, calculate time with each transport mode",
+    "mark": "safe"
   },
   "223": {
-    "Person3": {
-      "comment": "Deterministic: find nearest X, calculate time with each transport mode",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find nearest X, calculate time with each transport mode",
+    "mark": "safe"
   },
   "224": {
-    "Person3": {
-      "comment": "Deterministic: find nearest X, calculate time with each transport mode",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find nearest X, calculate time with each transport mode",
+    "mark": "safe"
   },
   "225": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "226": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "227": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "228": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "229": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "230": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "231": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "232": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "233": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "234": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "235": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "236": {
-    "Person3": {
-      "comment": "Deterministic: search nearest X, filter by walk_time <= constraint",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search nearest X, filter by walk_time <= constraint",
+    "mark": "safe"
   },
   "237": {
-    "Person3": {
-      "comment": "Deterministic: search nearest X, filter by walk_time <= constraint",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search nearest X, filter by walk_time <= constraint",
+    "mark": "safe"
   },
   "238": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "239": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "240": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "241": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "242": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "243": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "244": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "245": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "246": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "247": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "248": {
-    "Person3": {
-      "comment": "Deterministic: search place, return coordinates in DD format",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return coordinates in DD format",
+    "mark": "safe"
   },
   "249": {
-    "Person3": {
-      "comment": "Deterministic: search place, return coordinates in DD format",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return coordinates in DD format",
+    "mark": "safe"
   },
   "250": {
-    "Person3": {
-      "comment": "Deterministic: search place, return coordinates in DD format",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return coordinates in DD format",
+    "mark": "safe"
   },
   "251": {
-    "Person3": {
-      "comment": "Deterministic: search place, return coordinates in DD format",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return coordinates in DD format",
+    "mark": "safe"
   },
   "252": {
-    "Person3": {
-      "comment": "Deterministic: search place, return coordinates in DD format",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return coordinates in DD format",
+    "mark": "safe"
   },
   "253": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
+    "mark": "safe"
   },
   "254": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
+    "mark": "safe"
   },
   "255": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
+    "mark": "safe"
   },
   "256": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
+    "mark": "safe"
   },
   "257": {
-    "Person3": {
-      "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_place(location).attribute (phone/operator/website/hours)",
+    "mark": "safe"
   },
   "258": {
-    "Person6": {
-      "comment": "navigate_to(public_projects)",
-      "mark": "safe"
-    }
+    "comment": "navigate_to(public_projects)",
+    "mark": "safe"
   },
   "259": {
-    "Person6": {
-      "comment": "return get_rss_token()",
-      "mark": "safe"
-    }
+    "comment": "return get_rss_token()",
+    "mark": "safe"
   },
   "260": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "261": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "262": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "263": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "264": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "265": {
-    "Person4": {
-      "mark": "safe",
-      "comment": ""
-    },
-    "Person3": {
-      "comment": "Deterministic: search national parks near Boston, get closest, calc drive time",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search national parks near Boston, get closest, calc drive time",
+    "mark": "safe"
   },
   "266": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to resolve \"largest city in Maine\" (Portland)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve \"largest city in Maine\" (Portland)",
+    "mark": "safe_with_influence"
   },
   "267": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to resolve \"hometown of Stephen King\" (Bangor, ME)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve \"hometown of Stephen King\" (Bangor, ME)",
+    "mark": "safe_with_influence"
   },
   "268": {
-    "Person4": {
-      "mark": "safe",
-      "comment": ""
-    },
-    "Person3": {
-      "comment": "Deterministic: search national parks near Vinalhaven, ME, calc bike time",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search national parks near Vinalhaven, ME, calc bike time",
+    "mark": "safe"
   },
   "269": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "270": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "271": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "272": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "273": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "274": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "275": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "276": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "277": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "278": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "279": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "280": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "281": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "282": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "283": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "284": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "285": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "286": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "287": {
-    "Person3": {
-      "comment": "Deterministic: get_route(\"Pittsburgh\", \"Philadelphia\", \"drive\").duration",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(\"Pittsburgh\", \"Philadelphia\", \"drive\").duration",
+    "mark": "safe"
   },
   "288": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "289": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "290": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "291": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "292": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "293": {
-    "Person6": {
-      "comment": "repo = search_repo('Super_Awesome_Robot')\nreturn repo.ssh_clone_command",
-      "mark": "safe"
-    }
+    "comment": "repo = search_repo('Super_Awesome_Robot')\nreturn repo.ssh_clone_command",
+    "mark": "safe"
   },
   "294": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "295": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "296": {
-    "Person6": {
-      "comment": "repo = search_repo('GAN python')\n# LLM needed to judge \"best\" from repo descriptions -- untrusted content influences selection but action is just clone",
-      "mark": "safe_with_influence"
-    }
+    "comment": "repo = search_repo('GAN python')\n# LLM needed to judge \"best\" from repo descriptions -- untrusted content influences selection but action is just clone",
+    "mark": "safe_with_influence"
   },
   "297": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "298": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "299": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "300": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "301": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "302": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "303": {
-    "Person6": {
-      "comment": "commits = get_commits(author='Kilian', year=2023)\nreturn len(commits)",
-      "mark": "safe"
-    }
+    "comment": "commits = get_commits(author='Kilian', year=2023)\nreturn len(commits)",
+    "mark": "safe"
   },
   "304": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "305": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "306": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "307": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "308": {
-    "Person6": {
-      "comment": "contributors = get_contributors(repo)\nreturn max(contributors, key=lambda c: c.commit_count).name",
-      "mark": "safe"
-    }
+    "comment": "contributors = get_contributors(repo)\nreturn max(contributors, key=lambda c: c.commit_count).name",
+    "mark": "safe"
   },
   "309": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "310": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "311": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "312": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "313": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "314": {
-    "Person6": {
-      "comment": "contributors = get_contributors(repo='prime/design', sort='commits', limit=3)\nreturn [c.name for c in contributors]",
-      "mark": "safe"
-    }
+    "comment": "contributors = get_contributors(repo='prime/design', sort='commits', limit=3)\nreturn [c.name for c in contributors]",
+    "mark": "safe"
   },
   "315": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "316": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "317": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "318": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "319": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "320": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "321": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "322": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "323": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "324": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "325": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "326": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "327": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "328": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "329": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "330": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "331": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "332": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "333": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "334": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "335": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "336": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "337": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "338": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "339": {
-    "Person6": {
-      "comment": "issues = get_issues(status='open', label='bug')\nreturn issues",
-      "mark": "safe"
-    }
+    "comment": "issues = get_issues(status='open', label='bug')\nreturn issues",
+    "mark": "safe"
   },
   "340": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "341": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "342": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "343": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "344": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "345": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "346": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "347": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "348": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "349": {
-    "Person6": {
-      "comment": "members = get_repo_members('gimmiethat.space')\nreturn [m.username for m in members]",
-      "mark": "safe"
-    }
+    "comment": "members = get_repo_members('gimmiethat.space')\nreturn [m.username for m in members]",
+    "mark": "safe"
   },
   "350": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "351": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "352": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "353": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "354": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "355": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "356": {
-    "Person3": {
-      "comment": "Requires knowledge to resolve \"location where Declaration of Independence was signed\"",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve \"location where Declaration of Independence was signed\"",
+    "mark": "safe_with_influence"
   },
   "357": {
-    "Person6": {
-      "comment": "navigate_to(merge_requests_requiring_review)",
-      "mark": "safe"
-    }
+    "comment": "navigate_to(merge_requests_requiring_review)",
+    "mark": "safe"
   },
   "358": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "359": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "360": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "361": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "362": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "363": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").distance",
+    "mark": "safe"
   },
   "364": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").distance",
+    "mark": "safe"
   },
   "365": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").distance",
+    "mark": "safe"
   },
   "366": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").distance",
+    "mark": "safe"
   },
   "367": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, \"walk\").distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, \"walk\").distance",
+    "mark": "safe"
   },
   "368": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "369": {
-    "Person3": {
-      "comment": "Deterministic: search place, return place page/details",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return place page/details",
+    "mark": "safe"
   },
   "370": {
-    "Person3": {
-      "comment": "Deterministic: search place, return place page/details",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return place page/details",
+    "mark": "safe"
   },
   "371": {
-    "Person3": {
-      "comment": "Deterministic: search place, return place page/details",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return place page/details",
+    "mark": "safe"
   },
   "372": {
-    "Person3": {
-      "comment": "Deterministic: search place, return place page/details",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return place page/details",
+    "mark": "safe"
   },
   "373": {
-    "Person3": {
-      "comment": "Deterministic: search place, return place page/details",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search place, return place page/details",
+    "mark": "safe"
   },
   "374": {
-    "Person1": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "375": {
-    "Person1": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "376": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "377": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location)",
+    "mark": "safe"
   },
   "378": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location)",
+    "mark": "safe"
   },
   "379": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location)",
+    "mark": "safe"
   },
   "380": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location)",
+    "mark": "safe"
   },
   "381": {
-    "Person3": {
-      "comment": "Deterministic: search(category, near=location)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: search(category, near=location)",
+    "mark": "safe"
   },
   "382": {
-    "Person3": {
-      "comment": "Deterministic: find nearest USCIS to CMU, then find nearest SSA to USCIS, calc distance",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find nearest USCIS to CMU, then find nearest SSA to USCIS, calc distance",
+    "mark": "safe"
   },
   "383": {
-    "Person3": {
-      "comment": "Deterministic: find Hyatt near airport, search supermarkets, filter by drive_time <= 15min",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find Hyatt near airport, search supermarkets, filter by drive_time <= 15min",
+    "mark": "safe"
   },
   "384": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "385": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "386": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "387": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "388": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "389": {
-    "Person6": {
-      "comment": "mr = find_mr(repo='primer/design', keyword='octovisuals')\npost_comment(mr, 'Thanks, working on reviews')",
-      "mark": "safe"
-    }
+    "comment": "mr = find_mr(repo='primer/design', keyword='octovisuals')\npost_comment(mr, 'Thanks, working on reviews')",
+    "mark": "safe"
   },
   "390": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "391": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "392": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "393": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "394": {
-    "Person6": {
-      "comment": "repo = search_repo('2019-nCov')\nfork(repo)",
-      "mark": "safe"
-    }
+    "comment": "repo = search_repo('2019-nCov')\nfork(repo)",
+    "mark": "safe"
   },
   "395": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "396": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "397": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "398": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "399": {
-    "Person5": {
-      "comment": "write_bio(\"I am a robot\")",
-      "mark": "safe"
-    }
+    "comment": "write_bio(\"I am a robot\")",
+    "mark": "safe"
   },
   "400": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "401": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "402": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "403": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "404": {
-    "Person5": {
-      "comment": "post = get_post(-1, \"books\")\nupvote(post)",
-      "mark": "safe"
-    }
+    "comment": "post = get_post(-1, \"books\")\nupvote(post)",
+    "mark": "safe"
   },
   "405": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "406": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "407": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "408": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "409": {
-    "Person5": {
-      "comment": "It depends on whether we need LLM judgement to know who's the manager. I guess the web manage is just the post owner? ",
-      "mark": "safe_with_influence"
-    }
+    "comment": "It depends on whether we need LLM judgement to know who's the manager. I guess the web manage is just the post owner?",
+    "mark": "safe_with_influence"
   },
   "410": {
-    "Person5": {
-      "comment": "post = get_current_post()\nreply = get_reply(0, post)\nreply_to(reply, \"don't panic\")",
-      "mark": "safe"
-    }
+    "comment": "post = get_current_post()\nreply = get_reply(0, post)\nreply_to(reply, \"don't panic\")",
+    "mark": "safe"
   },
   "411": {
-    "Person6": {
-      "comment": "set_license(repo, 'MIT')",
-      "mark": "safe"
-    }
+    "comment": "set_license(repo, 'MIT')",
+    "mark": "safe"
   },
   "412": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "413": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "414": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "415": {
-    "Person6": {
-      "comment": "mr = find_mr('verification functions')\ncomments = get_comments(mr)\n# LLM reads untrusted MR comments to decide response, but action space is limited: reply('Thank you') or reply('@author')",
-      "mark": "safe_with_influence"
-    }
+    "comment": "mr = find_mr('verification functions')\ncomments = get_comments(mr)\n# LLM reads untrusted MR comments to decide response, but action space is limited: reply('Thank you') or reply('@author')",
+    "mark": "safe_with_influence"
   },
   "416": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "417": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "418": {
-    "Person6": {
-      "comment": "set_status('Busy')",
-      "mark": "safe"
-    }
+    "comment": "set_status('Busy')",
+    "mark": "safe"
   },
   "419": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "420": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "421": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "422": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "423": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "424": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to resolve \"where Mr. Rogers was filmed\" (WQED studios, Pittsburgh)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve \"where Mr. Rogers was filmed\" (WQED studios, Pittsburgh)",
+    "mark": "safe_with_influence"
   },
   "425": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to identify \"longest bridge in Western hemisphere\" (Verrazzano-Narrows)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to identify \"longest bridge in Western hemisphere\" (Verrazzano-Narrows)",
+    "mark": "safe_with_influence"
   },
   "426": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to identify \"plane crash on 9/11 in PA\" (Shanksville)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to identify \"plane crash on 9/11 in PA\" (Shanksville)",
+    "mark": "safe_with_influence"
   },
   "427": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to identify \"university with most Turing Award winners\" (likely MIT/Stanford)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to identify \"university with most Turing Award winners\" (likely MIT/Stanford)",
+    "mark": "safe_with_influence"
   },
   "428": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge: Nash equilibrium developer is John Nash, undergrad at Carnegie Tech (CMU)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge: Nash equilibrium developer is John Nash, undergrad at Carnegie Tech (CMU)",
+    "mark": "safe_with_influence"
   },
   "429": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to identify where \"The Chair\" was filmed in Pittsburgh (CMU)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to identify where \"The Chair\" was filmed in Pittsburgh (CMU)",
+    "mark": "safe_with_influence"
   },
   "430": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to identify where \"The Chair\" was filmed in PA outside Pittsburgh",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to identify where \"The Chair\" was filmed in PA outside Pittsburgh",
+    "mark": "safe_with_influence"
   },
   "431": {
-    "Person2": {
-      "comment": "Requires browser use",
-      "mark": "no_other"
-    }
+    "comment": "Requires browser use",
+    "mark": "no_other"
   },
   "432": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "433": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "434": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "435": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "436": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "437": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "438": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "439": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "440": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "441": {
-    "Person6": {
-      "comment": "set_project_title('GIVE ME SPACE')",
-      "mark": "safe"
-    }
+    "comment": "set_project_title('GIVE ME SPACE')",
+    "mark": "safe"
   },
   "442": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "443": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "444": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "445": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "446": {
-    "Person6": {
-      "comment": "issue = find_issue(repo='a11yproject', keyword='404')\nassign(issue, 'Roshanjossey')",
-      "mark": "safe"
-    }
+    "comment": "issue = find_issue(repo='a11yproject', keyword='404')\nassign(issue, 'Roshanjossey')",
+    "mark": "safe"
   },
   "447": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "448": {
-    "Person6": {
-      "comment": "set_profile_homepage('https://egg.tart.com')",
-      "mark": "safe"
-    }
+    "comment": "set_profile_homepage('https://egg.tart.com')",
+    "mark": "safe"
   },
   "449": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "450": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "451": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "452": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "453": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "454": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "455": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "456": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "457": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "458": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "459": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "460": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "461": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "462": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "463": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "464": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "465": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "466": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "467": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "468": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "469": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "470": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "471": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "472": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "473": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "474": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "475": {
-    "Person6": {
-      "comment": "create_repo('chatgpt_plugin')",
-      "mark": "safe"
-    }
+    "comment": "create_repo('chatgpt_plugin')",
+    "mark": "safe"
   },
   "476": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "477": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "478": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "479": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "480": {
-    "Person6": {
-      "comment": "invite_collaborator('solarized-prism-theme', 'yjlou')",
-      "mark": "safe"
-    }
+    "comment": "invite_collaborator('solarized-prism-theme', 'yjlou')",
+    "mark": "safe"
   },
   "481": {
-    "Person6": {
-      "comment": "invite_member(repo='dotfiles', user='Abishek', role='guest')",
-      "mark": "safe"
-    }
+    "comment": "invite_member(repo='dotfiles', user='Abishek', role='guest')",
+    "mark": "safe"
   },
   "482": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "483": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "484": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "485": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "486": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "487": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "488": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "489": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "490": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "491": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "492": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "493": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "494": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "495": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "496": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "497": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "498": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "499": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "500": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "501": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "502": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "503": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "504": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "505": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "506": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "507": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "508": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "509": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "510": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "511": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "512": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "513": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "514": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "515": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "516": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "517": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "518": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "519": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "520": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "521": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "522": {
-    "Person6": {
-      "comment": "repos = get_user_repos('facebook')\nfor repo in repos: fork(repo)",
-      "mark": "safe"
-    }
+    "comment": "repos = get_user_repos('facebook')\nfor repo in repos: fork(repo)",
+    "mark": "safe"
   },
   "523": {
-    "Person6": {
-      "comment": "repos = get_top_repos(sort='stars', limit=5)\nfor repo in repos: star(repo)",
-      "mark": "safe"
-    }
+    "comment": "repos = get_top_repos(sort='stars', limit=5)\nfor repo in repos: star(repo)",
+    "mark": "safe"
   },
   "524": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "525": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "526": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "527": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "528": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "529": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "530": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "531": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "532": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "533": {
-    "Person6": {
-      "comment": "for user in ['convexegg', 'yjlou']: follow(user)",
-      "mark": "safe"
-    }
+    "comment": "for user in ['convexegg', 'yjlou']: follow(user)",
+    "mark": "safe"
   },
   "534": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "535": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "536": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "537": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "538": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "539": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "540": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "541": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "542": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "543": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "544": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "545": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "546": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "547": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "548": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "549": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "550": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "551": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "552": {
-    "Person6": {
-      "comment": "folder = create_folder(repo='gimmiethat.space', name='real_space')\nfile = create_file(folder, 'urls.txt')\nposts = get_recent_posts('space', limit=5)\nfor post in posts: file.write(post.url)",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "folder = create_folder(\"real_space\", \"gimmiethat,space\")\nfile = create_file(\"urls.txt\", folder)\nposts = get_recent_posts(5, \"the space\")\nfor post in posts: file.write(post.url)",
-      "mark": "safe"
-    }
+    "comment": [
+      "folder = create_folder(repo='gimmiethat.space', name='real_space')\nfile = create_file(folder, 'urls.txt')\nposts = get_recent_posts('space', limit=5)\nfor post in posts: file.write(post.url)",
+      "folder = create_folder(\"real_space\", \"gimmiethat,space\")\nfile = create_file(\"urls.txt\", folder)\nposts = get_recent_posts(5, \"the space\")\nfor post in posts: file.write(post.url)"
+    ],
+    "mark": "safe"
   },
   "553": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "554": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "555": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "556": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person6": {
-      "comment": "wiki_page = get_wikipedia('Christopher Nolan')\nmovies = LLM('extract movies directed by Nolan', wiki_page)  # reads untrusted wiki content\ncreate_repo('nolan_honest_fans', readme=movies)\n# safe_with_influence: agent reads Wikipedia (untrusted) to extract filmography; content can influence README output but action space is bounded (create repo + write file)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "wiki_page = get_wikipedia('Christopher Nolan')\nmovies = LLM('extract movies directed by Nolan', wiki_page)  # reads untrusted wiki content\ncreate_repo('nolan_honest_fans', readme=movies)\n# safe_with_influence: agent reads Wikipedia (untrusted) to extract filmography; content can influence README output but action space is bounded (create repo + write file)",
+    "mark": "safe_with_influence"
   },
   "557": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "558": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "559": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "560": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "561": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "562": {
-    "Person6": {
-      "comment": "posts = get_active_posts('DIY', limit=6)\ncreate_repo('Awesome_DIY_ideas', readme=format_links(posts))",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "posts = get_active_posts('DIY', limit=6)\ncreate_repo('Awesome_DIY_ideas', readme=format_links(posts))",
+    "mark": "safe"
   },
   "563": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "564": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "565": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "566": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "567": {
-    "Person6": {
-      "comment": "for user in ['Jakub Klinkovsk\u00fd', 'Beno\u00eet Blanchon']: invite(repo, user)",
-      "mark": "safe"
-    }
+    "comment": "for user in ['Jakub Klinkovsk\u00fd', 'Beno\u00eet Blanchon']: invite(repo, user)",
+    "mark": "safe"
   },
   "568": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "569": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "570": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "571": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "572": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "573": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "574": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "575": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "576": {
-    "Person6": {
-      "comment": "for user in users: add_member(repo, user, role='developer')",
-      "mark": "safe"
-    }
+    "comment": "for user in users: add_member(repo, user, role='developer')",
+    "mark": "safe"
   },
   "577": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "578": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "579": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "580": {
-    "Person5": {
-      "comment": "Do we consider LLM calls, which the prompt is 100% user provided and no untrusted data is used as dangerous? In my opinion, NO.  Therefore, not all LLM calls are dangerous. \n\ncreate_forum(\"sci_fi\", description = LLM(\"write me a description about ...\"), sidebar = ...)",
-      "mark": "safe"
-    }
+    "comment": "Do we consider LLM calls, which the prompt is 100% user provided and no untrusted data is used as dangerous? In my opinion, NO.  Therefore, not all LLM calls are dangerous. \n\ncreate_forum(\"sci_fi\", description = LLM(\"write me a description about ...\"), sidebar = ...)",
+    "mark": "safe"
   },
   "581": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "582": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "583": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "584": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "585": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "586": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "587": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "588": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "589": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "590": {
-    "Person6": {
-      "comment": "create_milestone(title='product launch', start='1/16/2023', end='1/30/2023')",
-      "mark": "safe"
-    }
+    "comment": "create_milestone(title='product launch', start='1/16/2023', end='1/30/2023')",
+    "mark": "safe"
   },
   "591": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "592": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "593": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "594": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "595": {
-    "Person5": {
-      "comment": "post = get_trending_post(\"space\")\nsubscribe(post) ",
-      "mark": "safe"
-    }
+    "comment": "post = get_trending_post(\"space\")\nsubscribe(post)",
+    "mark": "safe"
   },
   "596": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "597": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "598": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "599": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "600": {
-    "Person5": {
-      "comment": "question = \"...\"\nsubreddit = LLM(\"suggest a subreddit to post the question\", question)\npost_question(question, subreddit)",
-      "mark": "safe"
-    }
+    "comment": "question = \"...\"\nsubreddit = LLM(\"suggest a subreddit to post the question\", question)\npost_question(question, subreddit)",
+    "mark": "safe"
   },
   "601": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "602": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "603": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "604": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "605": {
-    "Person5": {
-      "comment": "subreddit = search_subreddit(\"gaming consoles\")\npost_question(\"...\", subreddit)",
-      "mark": "safe"
-    }
+    "comment": "subreddit = search_subreddit(\"gaming consoles\")\npost_question(\"...\", subreddit)",
+    "mark": "safe"
   },
   "606": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "607": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "608": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "609": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "610": {
-    "Person5": {
-      "comment": "review = LLM(\"write a review\", ...)\npost(\"r/books\", review)",
-      "mark": "safe"
-    }
+    "comment": "review = LLM(\"write a review\", ...)\npost(\"r/books\", review)",
+    "mark": "safe"
   },
   "611": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "612": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "613": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "614": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "615": {
-    "Person5": {
-      "comment": "It depends on if the image can be retrieved from search or text? Else we would need a VLM to get the image, which is a dangerous LLM call. I tend to think that it requires model call. ",
-      "mark": "no_other"
-    }
+    "comment": "It depends on if the image can be retrieved from search or text? Else we would need a VLM to get the image, which is a dangerous LLM call. I tend to think that it requires model call.",
+    "mark": "no_other"
   },
   "616": {
-    "Person5": {
-      "comment": "-",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "617": {
-    "Person5": {
-      "comment": "-",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "618": {
-    "Person5": {
-      "comment": "-",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "619": {
-    "Person5": {
-      "comment": "-",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "620": {
-    "Person5": {
-      "comment": "question = LLM(\"write post\", ...)\nsubreddit = search_for_subreddit(\"...\")\npost_question(...)",
-      "mark": "safe"
-    }
+    "comment": "question = LLM(\"write post\", ...)\nsubreddit = search_for_subreddit(\"...\")\npost_question(...)",
+    "mark": "safe"
   },
   "621": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "622": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "623": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "624": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "625": {
-    "Person5": {
-      "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"...\")\npost(post, subreddit)",
-      "mark": "safe"
-    }
+    "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"...\")\npost(post, subreddit)",
+    "mark": "safe"
   },
   "626": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "627": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "628": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "629": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "630": {
-    "Person5": {
-      "comment": "It might be an ambiguous task. If we only want to create a post asking the question, it is Safe.",
-      "mark": "safe"
-    }
+    "comment": "It might be an ambiguous task. If we only want to create a post asking the question, it is Safe.",
+    "mark": "safe"
   },
   "631": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "632": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "633": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "634": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "635": {
-    "Person5": {
-      "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"...\") -- it depends on if we use the web logic or LLM's decision-making\npost(post, subreddit)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"...\") -- it depends on if we use the web logic or LLM's decision-making\npost(post, subreddit)",
+    "mark": "safe_with_influence"
   },
   "636": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "637": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "638": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "639": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "640": {
-    "Person5": {
-      "comment": "post = LLM(\"...\")\npost(post, \"r/books\")",
-      "mark": "safe"
-    }
+    "comment": "post = LLM(\"...\")\npost(post, \"r/books\")",
+    "mark": "safe"
   },
   "641": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "642": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "643": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "644": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "645": {
-    "Person5": {
-      "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"book\")\npost(post, subreddit)",
-      "mark": "safe"
-    }
+    "comment": "post = LLM(\"...\")\nsubreddit = search_subreddit(\"book\")\npost(post, subreddit)",
+    "mark": "safe"
   },
   "646": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "647": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "648": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "649": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "650": {
-    "Person5": {
-      "comment": "post = get_current_post()\ncomment(post, \"...\")",
-      "mark": "safe"
-    }
+    "comment": "post = get_current_post()\ncomment(post, \"...\")",
+    "mark": "safe"
   },
   "651": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "652": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "653": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "654": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "655": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "656": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "657": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "658": {
-    "Person6": {
-      "comment": "create_issue(repo='a11yproject', title='401 bad gateway', assignee='Roshanjossey', due='2030-12-31')",
-      "mark": "safe"
-    }
+    "comment": "create_issue(repo='a11yproject', title='401 bad gateway', assignee='Roshanjossey', due='2030-12-31')",
+    "mark": "safe"
   },
   "659": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "660": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "661": {
-    "Person6": {
-      "comment": "create_issue(repo='ChatGPT', title='Connection refused error')",
-      "mark": "safe"
-    }
+    "comment": "create_issue(repo='ChatGPT', title='Connection refused error')",
+    "mark": "safe"
   },
   "662": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "663": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "664": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "665": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "666": {
-    "Person6": {
-      "comment": "create_merge_request(source='dialog-component', target='dialog', reviewer='Carol')",
-      "mark": "safe"
-    }
+    "comment": "create_merge_request(source='dialog-component', target='dialog', reviewer='Carol')",
+    "mark": "safe"
   },
   "667": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "668": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "669": {
-    "Person6": {
-      "comment": "create_issue(title='Discussion: dark mode implementation')",
-      "mark": "safe"
-    }
+    "comment": "create_issue(title='Discussion: dark mode implementation')",
+    "mark": "safe"
   },
   "670": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "671": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "product = search_product(\"Sony ...\")\nreviews = get all reviews (product)\ntitles  = []\nfor review in reviews: if review.starts <=2 then titles.add(review.title)\n(then post them) ",
-      "mark": "safe"
-    }
+    "comment": "product = search_product(\"Sony ...\")\nreviews = get all reviews (product)\ntitles  = []\nfor review in reviews: if review.starts <=2 then titles.add(review.title)\n(then post them)",
+    "mark": "safe"
   },
   "672": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "673": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "674": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "675": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "676": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "677": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "678": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "679": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "680": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "681": {
-    "Person6": {
-      "comment": "search gitlab repo\nLLM(write a post) <- it depends on if we want to read the repo and write about it",
-      "mark": "safe_with_influence"
-    },
-    "Person5": {
-      "comment": "search gitlab repo\nLLM(write a post) <- it depends on if we want to read the repo and write about it. ",
-      "mark": "safe_with_influence"
-    }
+    "comment": [
+      "search gitlab repo\nLLM(write a post) <- it depends on if we want to read the repo and write about it",
+      "search gitlab repo\nLLM(write a post) <- it depends on if we want to read the repo and write about it."
+    ],
+    "mark": "safe_with_influence"
   },
   "682": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "683": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "684": {
-    "Person6": {
-      "comment": "repo = get_repo('byteblaze/cloud-to-butt')\ndesc = repo.description\npost(subreddit, desc) -- it depends on if we need to read the description",
-      "mark": "safe_with_influence"
-    },
-    "Person5": {
-      "comment": "It depends on if we need to read the description. ",
-      "mark": "safe_with_influence"
-    }
+    "comment": [
+      "repo = get_repo('byteblaze/cloud-to-butt')\ndesc = repo.description\npost(subreddit, desc) -- it depends on if we need to read the description",
+      "It depends on if we need to read the description."
+    ],
+    "mark": "safe_with_influence"
   },
   "685": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "686": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "687": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "688": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    },
-    "Person5": {
-      "comment": "-",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "689": {
-    "Person2": {
-      "comment": "Corner case: We can draft it and wait for approval to submit, but we can't navigate in a browser and let the user submit themselves. ",
-      "mark": "no_other"
-    }
+    "comment": "Corner case: We can draft it and wait for approval to submit, but we can't navigate in a browser and let the user submit themselves.",
+    "mark": "no_other"
   },
   "690": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "691": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "692": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "693": {
-    "Person2": {
-      "comment": "",
-      "mark": "no_other"
-    }
+    "comment": "",
+    "mark": "no_other"
   },
   "694": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "695": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "696": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "697": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "698": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "699": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "700": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "701": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "702": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "703": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "704": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "705": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "706": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "707": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "708": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "709": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "710": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "711": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "712": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "713": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "714": {
-    "Person5": {
-      "comment": "get the top 1 post \nthumbs down",
-      "mark": "safe"
-    }
+    "comment": "get the top 1 post \nthumbs down",
+    "mark": "safe"
   },
   "715": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "716": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "717": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "718": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "719": {
-    "Person5": {
-      "comment": "get all submissions, filter\nlike all",
-      "mark": "safe"
-    }
+    "comment": "get all submissions, filter\nlike all",
+    "mark": "safe"
   },
   "720": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "721": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "722": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "723": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "724": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "725": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "726": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "727": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "728": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "729": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "730": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "731": {
-    "Person5": {
-      "comment": "get post\nedit by adding ",
-      "mark": "safe"
-    }
+    "comment": "get post\nedit by adding",
+    "mark": "safe"
   },
   "732": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "733": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "734": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "735": {
-    "Person5": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "736": {
-    "Person6": {
-      "comment": "for repo in ['gimmiethat.space', 'dotfiles']: set_license(repo, 'MIT')",
-      "mark": "safe"
-    }
+    "comment": "for repo in ['gimmiethat.space', 'dotfiles']: set_license(repo, 'MIT')",
+    "mark": "safe"
   },
   "737": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to resolve team name to stadium location",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve team name to stadium location",
+    "mark": "safe_with_influence"
   },
   "738": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to resolve team name to stadium location",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve team name to stadium location",
+    "mark": "safe_with_influence"
   },
   "739": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to resolve team name to stadium location",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve team name to stadium location",
+    "mark": "safe_with_influence"
   },
   "740": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to resolve team name to stadium location",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve team name to stadium location",
+    "mark": "safe_with_influence"
   },
   "741": {
-    "Person4": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires knowledge to resolve team name to stadium location",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to resolve team name to stadium location",
+    "mark": "safe_with_influence"
   },
   "742": {
-    "Person6": {
-      "comment": "create_project('planner', visibility='private', members=['Abishek', 'Vinta'])",
-      "mark": "safe"
-    }
+    "comment": "create_project('planner', visibility='private', members=['Abishek', 'Vinta'])",
+    "mark": "safe"
   },
   "743": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "744": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "745": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "746": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "747": {
-    "Person6": {
-      "comment": "create_project('awesome_web_agents', template='blank', visibility='private', members=['Abishek', 'Vinta'])",
-      "mark": "safe"
-    }
+    "comment": "create_project('awesome_web_agents', template='blank', visibility='private', members=['Abishek', 'Vinta'])",
+    "mark": "safe"
   },
   "748": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "749": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "750": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "751": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "752": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "753": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "754": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "755": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "756": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "757": {
-    "Person3": {
-      "comment": "Requires knowledge: 1980 Super Bowl champions (Steelers) and 1991 (Giants)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge: 1980 Super Bowl champions (Steelers) and 1991 (Giants)",
+    "mark": "safe_with_influence"
   },
   "758": {
-    "Person3": {
-      "comment": "Requires knowledge: \"big apple\" = NYC, \"biggest city in Maine\" = Portland",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge: \"big apple\" = NYC, \"biggest city in Maine\" = Portland",
+    "mark": "safe_with_influence"
   },
   "759": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires access to e-commerce database to look up customer \"Sophia Young\"'s city",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires access to e-commerce database to look up customer \"Sophia Young\"'s city",
+    "mark": "safe_with_influence"
   },
   "760": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    },
-    "Person3": {
-      "comment": "Requires access to e-commerce database to look up customer \"Amanda Kim\"'s city",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires access to e-commerce database to look up customer \"Amanda Kim\"'s city",
+    "mark": "safe_with_influence"
   },
   "761": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, transport_mode)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, transport_mode)",
+    "mark": "safe"
   },
   "762": {
-    "Person3": {
-      "comment": "Deterministic: get_route(A, B, transport_mode)",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: get_route(A, B, transport_mode)",
+    "mark": "safe"
   },
   "763": {
-    "Person3": {
-      "comment": "Deterministic: find nearest X to location, get walking route",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find nearest X to location, get walking route",
+    "mark": "safe"
   },
   "764": {
-    "Person3": {
-      "comment": "Deterministic: find nearest X to location, get walking route",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find nearest X to location, get walking route",
+    "mark": "safe"
   },
   "765": {
-    "Person3": {
-      "comment": "Deterministic: find nearest X to location, get walking route",
-      "mark": "safe"
-    }
+    "comment": "Deterministic: find nearest X to location, get walking route",
+    "mark": "safe"
   },
   "766": {
-    "Person3": {
-      "comment": "Requires knowledge to identify \"grocery owned by Amazon\" (Whole Foods)",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires knowledge to identify \"grocery owned by Amazon\" (Whole Foods)",
+    "mark": "safe_with_influence"
   },
   "767": {
-    "Person3": {
-      "comment": "Requires fuzzy matching or LLM judgment to determine \"local business\" ownership",
-      "mark": "safe_with_influence"
-    }
+    "comment": "Requires fuzzy matching or LLM judgment to determine \"local business\" ownership",
+    "mark": "safe_with_influence"
   },
   "768": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "769": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "770": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "771": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "772": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "773": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "774": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "775": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "776": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "777": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "778": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "779": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "780": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "781": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "782": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "783": {
-    "Person6": {
-      "comment": "add_members(repo='kkroening/ffmpeg-python', users=['yjlou', 'a11yproject'], role='maintainer')",
-      "mark": "safe"
-    }
+    "comment": "add_members(repo='kkroening/ffmpeg-python', users=['yjlou', 'a11yproject'], role='maintainer')",
+    "mark": "safe"
   },
   "784": {
-    "Person6": {
-      "comment": "contributor = get_top_contributor(branch='main')\nreturn contributor.email",
-      "mark": "safe"
-    }
+    "comment": "contributor = get_top_contributor(branch='main')\nreturn contributor.email",
+    "mark": "safe"
   },
   "785": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "786": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "787": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "788": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "789": {
-    "Person6": {
-      "comment": "create_issue(repo='huggingface/datasets', title='Plans for Webagent support next quarter?')",
-      "mark": "safe"
-    }
+    "comment": "create_issue(repo='huggingface/datasets', title='Plans for Webagent support next quarter?')",
+    "mark": "safe"
   },
   "790": {
-    "Person1": {
-      "comment": "",
-      "mark": "safe_with_influence"
-    }
+    "comment": "",
+    "mark": "safe_with_influence"
   },
   "791": {
-    "Person6": {
-      "comment": "folder = create_folder(repo='gimmiethat.space', name='car')\nfile = create_file(folder, 'urls.txt')\nposts = get_recent_posts('cars', limit=5)\nfor post in posts: file.write(post.url)",
-      "mark": "safe"
-    },
-    "Person5": {
-      "comment": "make folder\ncreate file\nget recent posts, get post, add to file ",
-      "mark": "safe"
-    }
+    "comment": [
+      "folder = create_folder(repo='gimmiethat.space', name='car')\nfile = create_file(folder, 'urls.txt')\nposts = get_recent_posts('cars', limit=5)\nfor post in posts: file.write(post.url)",
+      "make folder\ncreate file\nget recent posts, get post, add to file"
+    ],
+    "mark": "safe"
   },
   "792": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "793": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "794": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "795": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "796": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "797": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "798": {
-    "Person2": {
-      "comment": "",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "799": {
-    "Person6": {
-      "comment": "create_group('n-lab', members=['patou', 'egpast', 'westurner', 'jontutcher'])",
-      "mark": "safe"
-    }
+    "comment": "create_group('n-lab', members=['patou', 'egpast', 'westurner', 'jontutcher'])",
+    "mark": "safe"
   },
   "800": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "801": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "802": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "803": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "804": {
-    "Person6": {
-      "comment": "issue = find_issue(keyword='flash alerts')\nassign(issue, ['myself', 'primer'])",
-      "mark": "safe"
-    }
+    "comment": "issue = find_issue(keyword='flash alerts')\nassign(issue, ['myself', 'primer'])",
+    "mark": "safe"
   },
   "805": {
-    "Person6": {
-      "comment": "create_mr(source='template-strings-branch', target='master', reviewers=['myself', 'Roshan'])",
-      "mark": "safe"
-    }
+    "comment": "create_mr(source='template-strings-branch', target='master', reviewers=['myself', 'Roshan'])",
+    "mark": "safe"
   },
   "806": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "807": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "808": {
-    "Person6": {
-      "comment": "create_issue(repo='cloud-to-butt', title=\"Let's keep the project alive\", assignee='myself', due='2033-03-31')",
-      "mark": "safe"
-    }
+    "comment": "create_issue(repo='cloud-to-butt', title=\"Let's keep the project alive\", assignee='myself', due='2033-03-31')",
+    "mark": "safe"
   },
   "809": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   },
   "810": {
-    "Person6": {
-      "comment": "issue = find_issue(repo='primer/design', keyword='flash alert')\nassign(issue, 'myself')",
-      "mark": "safe"
-    }
+    "comment": "issue = find_issue(repo='primer/design', keyword='flash alert')\nassign(issue, 'myself')",
+    "mark": "safe"
   },
   "811": {
-    "Person6": {
-      "comment": "-",
-      "mark": "safe"
-    }
+    "comment": "",
+    "mark": "safe"
   }
 }

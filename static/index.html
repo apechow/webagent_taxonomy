@@ -311,6 +311,7 @@
     .stat.no_replanning .stat-value { color: var(--accent-red); }
     .stat.no_other .stat-value { color: var(--accent-orange); }
     .stat.legacy .stat-value { color: var(--accent-yellow); }
+    .stat.disputed .stat-value { color: var(--accent-yellow); }
     .stat.total .stat-value { color: var(--accent-blue); }
     .stat.remaining .stat-value { color: var(--accent-purple); }
 
@@ -465,7 +466,8 @@
     }
 
     /* Legacy marks (yes/no/maybe) - shown with warning style */
-    .current-mark.legacy {
+    .current-mark.legacy,
+    .current-mark.disputed {
       background: rgba(210, 153, 34, 0.15);
       color: var(--accent-yellow);
       border: 1px solid rgba(210, 153, 34, 0.3);
@@ -815,31 +817,10 @@
   </style>
 </head>
 <body>
-  <!-- Login Modal -->
-  <div class="modal-overlay" id="login-modal">
-    <div class="modal">
-      <h2>👋 Welcome</h2>
-      <p>Enter your name to start annotating tasks. Your annotations will be saved separately.</p>
-      
-      <div class="existing-annotators" id="existing-annotators-section">
-        <label>Or select an existing annotator:</label>
-        <div class="annotator-chips" id="annotator-chips"></div>
-      </div>
-      
-      <input type="text" id="annotator-input" placeholder="Enter your name..." autocomplete="off">
-      <button class="modal-btn" onclick="login()" id="login-btn">Start Annotating</button>
-    </div>
-  </div>
-
   <div class="container" id="main-content">
     <header>
       <div class="header-left">
         <h1>WebArena Annotator</h1>
-        <div class="user-badge" id="user-badge">
-          <span>👤</span>
-          <span id="current-user">-</span>
-          <button onclick="logout()" title="Switch user">✕</button>
-        </div>
         <a href="/summary" class="summary-link">📊 Summary</a>
       </div>
       <div class="header-controls">
@@ -878,6 +859,10 @@
             <span class="stat-value" id="stat-legacy">-</span>
             <span class="stat-label">Review</span>
           </div>
+          <div class="stat disputed">
+            <span class="stat-value" id="stat-disputed">-</span>
+            <span class="stat-label">Disputed</span>
+          </div>
         </div>
       </div>
     </header>
@@ -891,6 +876,7 @@
         <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
         <button class="filter-btn" data-filter="unmarked" onclick="setFilter('unmarked')">Unmarked</button>
         <button class="filter-btn" data-filter="needs_review" onclick="setFilter('needs_review')" style="color: var(--accent-yellow);">Needs Review</button>
+        <button class="filter-btn" data-filter="disputed" onclick="setFilter('disputed')" style="color: var(--accent-yellow);">Disputed</button>
         <button class="filter-btn" data-filter="safe" onclick="setFilter('safe')">Safe</button>
         <button class="filter-btn" data-filter="safe_with_influence" onclick="setFilter('safe_with_influence')">Influence</button>
         <button class="filter-btn" data-filter="no_replanning" onclick="setFilter('no_replanning')">Replan</button>
@@ -917,118 +903,14 @@
     let tasks = [];
     let filteredTasks = [];
     let websites = [];
-    let existingAnnotators = [];
     let currentIndex = 0;
     let currentFilter = 'all';
     let currentWebsite = 'all';
-    let currentAnnotator = null;
     let selectedMark = null;
-
-    async function init() {
-      // Check for saved annotator
-      const savedAnnotator = localStorage.getItem('annotator');
-      
-      // Load existing annotators
-      const response = await fetch('/api/annotators');
-      existingAnnotators = await response.json();
-      
-      if (savedAnnotator) {
-        currentAnnotator = savedAnnotator;
-        hideLoginModal();
-        await startApp();
-      } else {
-        showLoginModal();
-      }
-    }
-
-    function showLoginModal() {
-      document.getElementById('login-modal').classList.remove('hidden');
-      document.getElementById('main-content').classList.add('hidden');
-      
-      // Show existing annotators
-      const chipsContainer = document.getElementById('annotator-chips');
-      const section = document.getElementById('existing-annotators-section');
-      
-      if (existingAnnotators.length > 0) {
-        section.classList.remove('hidden');
-        chipsContainer.innerHTML = existingAnnotators.map(a => 
-          `<div class="annotator-chip" onclick="selectExistingAnnotator('${escapeHtml(a)}')">${escapeHtml(a)}</div>`
-        ).join('');
-      } else {
-        section.classList.add('hidden');
-      }
-
-      document.getElementById('annotator-input').focus();
-    }
-
-    function hideLoginModal() {
-      document.getElementById('login-modal').classList.add('hidden');
-      document.getElementById('main-content').classList.remove('hidden');
-    }
-
-    function selectExistingAnnotator(name) {
-      document.getElementById('annotator-input').value = name;
-    }
-
-    function login() {
-      const input = document.getElementById('annotator-input');
-      const name = input.value.trim();
-      
-      if (!name) {
-        input.style.borderColor = 'var(--accent-red)';
-        return;
-      }
-      
-      currentAnnotator = name;
-      localStorage.setItem('annotator', name);
-      hideLoginModal();
-      startApp();
-    }
-
-    function logout() {
-      localStorage.removeItem('annotator');
-      currentAnnotator = null;
-      location.reload();
-    }
-
-    async function startApp() {
-      document.getElementById('current-user').textContent = currentAnnotator;
-      await loadWebsites();
-      await loadTasks();
-      await loadStats();
-      applyFilter();
-      renderTask();
-    }
-
-    async function loadWebsites() {
-      const response = await fetch('/api/websites');
-      websites = await response.json();
-      
-      const select = document.getElementById('website-select');
-      websites.forEach(site => {
-        const option = document.createElement('option');
-        option.value = site;
-        option.textContent = site;
-        select.appendChild(option);
-      });
-      
-      // Check URL for website param
-      const urlParams = new URLSearchParams(window.location.search);
-      const websiteParam = urlParams.get('website');
-      if (websiteParam && (websiteParam === 'all' || websites.includes(websiteParam))) {
-        currentWebsite = websiteParam;
-        select.value = websiteParam;
-      }
-    }
-
-    async function loadTasks() {
-      const response = await fetch(`/api/tasks?website=${currentWebsite}&annotator=${encodeURIComponent(currentAnnotator)}`);
-      tasks = await response.json();
-    }
 
     const LEGACY_MARKS = ['yes', 'no', 'maybe'];
     const NEW_MARKS = ['safe', 'safe_with_influence', 'no_replanning', 'no_other'];
-    
+
     const MARK_LABELS = {
       'safe': 'Safe',
       'safe_with_influence': 'Safe (Influence)',
@@ -1039,14 +921,54 @@
       'maybe': 'Maybe (legacy)'
     };
 
-    function isLegacyMark(mark) {
-      return LEGACY_MARKS.includes(mark);
+    // mark / comment may be a string or an array (union of several annotators)
+    function asList(v) {
+      if (v === null || v === undefined || v === '') return [];
+      return Array.isArray(v) ? v : [v];
+    }
+    function marksOf(task) { return asList(task.annotation && task.annotation.mark); }
+    function commentsOf(task) { return asList(task.annotation && task.annotation.comment); }
+    function isLegacyMark(mark) { return LEGACY_MARKS.includes(mark); }
+    function hasLegacy(task) { return marksOf(task).some(isLegacyMark); }
+    function isDisputed(task) { return marksOf(task).length > 1; }
+
+    async function init() {
+      await loadWebsites();
+      await loadTasks();
+      await loadStats();
+      applyFilter();
+      renderTask();
+    }
+
+    async function loadWebsites() {
+      const response = await fetch('/api/websites');
+      websites = await response.json();
+
+      const select = document.getElementById('website-select');
+      websites.forEach(site => {
+        const option = document.createElement('option');
+        option.value = site;
+        option.textContent = site;
+        select.appendChild(option);
+      });
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const websiteParam = urlParams.get('website');
+      if (websiteParam && (websiteParam === 'all' || websites.includes(websiteParam))) {
+        currentWebsite = websiteParam;
+        select.value = websiteParam;
+      }
+    }
+
+    async function loadTasks() {
+      const response = await fetch(`/api/tasks?website=${currentWebsite}`);
+      tasks = await response.json();
     }
 
     async function loadStats() {
-      const response = await fetch(`/api/stats?website=${currentWebsite}&annotator=${encodeURIComponent(currentAnnotator)}`);
+      const response = await fetch(`/api/stats?website=${currentWebsite}`);
       const stats = await response.json();
-      
+
       document.getElementById('stat-total').textContent = stats.total;
       document.getElementById('stat-remaining').textContent = stats.remaining;
       document.getElementById('stat-safe').textContent = stats.safe || 0;
@@ -1054,16 +976,17 @@
       document.getElementById('stat-no_replanning').textContent = stats.no_replanning || 0;
       document.getElementById('stat-no_other').textContent = stats.no_other || 0;
       document.getElementById('stat-legacy').textContent = stats.legacy || 0;
+      document.getElementById('stat-disputed').textContent = stats.disputed || 0;
     }
 
     async function changeWebsite() {
       currentWebsite = document.getElementById('website-select').value;
       currentIndex = 0;
-      
+
       const url = new URL(window.location);
       url.searchParams.set('website', currentWebsite);
       window.history.pushState({}, '', url);
-      
+
       await loadTasks();
       await loadStats();
       applyFilter();
@@ -1074,13 +997,15 @@
       if (currentFilter === 'all') {
         filteredTasks = [...tasks];
       } else if (currentFilter === 'unmarked') {
-        filteredTasks = tasks.filter(t => !t.annotation);
+        filteredTasks = tasks.filter(t => marksOf(t).length === 0);
       } else if (currentFilter === 'needs_review') {
-        filteredTasks = tasks.filter(t => t.annotation && isLegacyMark(t.annotation.mark));
+        filteredTasks = tasks.filter(hasLegacy);
+      } else if (currentFilter === 'disputed') {
+        filteredTasks = tasks.filter(isDisputed);
       } else {
-        filteredTasks = tasks.filter(t => t.annotation && t.annotation.mark === currentFilter);
+        filteredTasks = tasks.filter(t => marksOf(t).includes(currentFilter));
       }
-      
+
       if (currentIndex >= filteredTasks.length) {
         currentIndex = Math.max(0, filteredTasks.length - 1);
       }
@@ -1098,7 +1023,7 @@
 
     function renderTask() {
       const container = document.getElementById('task-container');
-      
+
       if (filteredTasks.length === 0) {
         container.innerHTML = `
           <div class="task-card">
@@ -1114,55 +1039,58 @@
       }
 
       const task = filteredTasks[currentIndex];
-      const hasLegacyMark = task.annotation && isLegacyMark(task.annotation.mark);
-      // For legacy marks, don't pre-select; force re-annotation
-      selectedMark = (task.annotation && !hasLegacyMark) ? task.annotation.mark : null;
-      const comment = task.annotation ? task.annotation.comment : '';
+      const marks = marksOf(task);
+      const comments = commentsOf(task);
+      const legacy = hasLegacy(task);
+      const disputed = isDisputed(task);
+
+      // Pre-select only when there is a single, current-scheme mark.
+      selectedMark = (marks.length === 1 && !legacy) ? marks[0] : null;
+      const commentText = comments.join('\n\n');
 
       let markLabel, markClass;
-      if (!task.annotation) {
+      if (marks.length === 0) {
         markLabel = 'UNMARKED';
         markClass = 'unmarked';
-      } else if (hasLegacyMark) {
-        markLabel = `⚠ ${task.annotation.mark.toUpperCase()} (needs review)`;
+      } else if (disputed) {
+        markLabel = `⚠ DISPUTED: ${marks.map(m => MARK_LABELS[m] || m).join(' / ')}`;
+        markClass = 'disputed';
+      } else if (legacy) {
+        markLabel = `⚠ ${marks[0].toUpperCase()} (needs review)`;
         markClass = 'legacy';
       } else {
-        markLabel = MARK_LABELS[task.annotation.mark] || task.annotation.mark;
-        markClass = task.annotation.mark;
+        markLabel = MARK_LABELS[marks[0]] || marks[0];
+        markClass = marks[0];
       }
 
       const siteBadges = (task.sites || []).map(s => `<span class="site-badge">${escapeHtml(s)}</span>`).join('');
 
-      // Other annotators' annotations
-      const otherAnnotations = Object.entries(task.all_annotations || {})
-        .filter(([name]) => name !== currentAnnotator)
-        .map(([name, ann]) => {
-          const isLegacy = isLegacyMark(ann.mark);
-          const badgeClass = isLegacy ? 'yes' : ann.mark;
-          const label = isLegacy ? `${ann.mark} (legacy)` : (MARK_LABELS[ann.mark] || ann.mark);
-          return `
-            <div class="annotation-item">
-              <span class="annotator-name">${escapeHtml(name)}</span>
-              <span class="mark-badge ${badgeClass}">${escapeHtml(label)}</span>
-              <span class="comment-text">${ann.comment ? escapeHtml(ann.comment) : '—'}</span>
-            </div>
-          `;
-        }).join('');
-
-      const otherAnnotationsSection = otherAnnotations ? `
+      // Existing comments (listed when there are several)
+      const commentsSection = comments.length > 1 ? `
         <div class="other-annotations">
-          <div class="other-annotations-title">Other Annotations (${Object.keys(task.all_annotations || {}).filter(n => n !== currentAnnotator).length})</div>
-          <div class="annotation-list">${otherAnnotations}</div>
+          <div class="other-annotations-title">Comments (${comments.length})</div>
+          <div class="annotation-list">
+            ${comments.map(c => `<div class="annotation-item"><span class="comment-text">${escapeHtml(c)}</span></div>`).join('')}
+          </div>
         </div>
       ` : '';
 
-      // Legacy banner
-      const legacyBanner = hasLegacyMark ? `
-        <div class="legacy-banner">
-          ⚠ Previous annotation used old category: <span class="old-mark">${task.annotation.mark.toUpperCase()}</span>
-          — please re-classify with the new categories below.
-        </div>
-      ` : '';
+      let banner = '';
+      if (disputed) {
+        banner = `
+          <div class="legacy-banner">
+            ⚠ Annotators disagreed: ${marks.map(m => `<span class="old-mark">${escapeHtml(MARK_LABELS[m] || m)}</span>`).join(' ')}
+            — pick one category below to resolve.
+          </div>
+        `;
+      } else if (legacy) {
+        banner = `
+          <div class="legacy-banner">
+            ⚠ Previous annotation used old category: <span class="old-mark">${marks[0].toUpperCase()}</span>
+            — please re-classify with the new categories below.
+          </div>
+        `;
+      }
 
       container.innerHTML = `
         <div class="task-card">
@@ -1173,9 +1101,9 @@
             </div>
             <span class="current-mark ${markClass}">${markLabel}</span>
           </div>
-          
+
           <div class="task-intent">${escapeHtml(task.intent)}</div>
-          
+
           <div class="task-meta">
             <div class="meta-item">
               <span class="meta-label">Template ID</span>
@@ -1195,12 +1123,12 @@
             </div>
           </div>
 
-          ${otherAnnotationsSection}
+          ${commentsSection}
 
           <div class="annotation-section">
-            <div class="annotation-title">Your Annotation</div>
-            
-            ${legacyBanner}
+            <div class="annotation-title">Annotation</div>
+
+            ${banner}
 
             <div class="mark-buttons">
               <button class="mark-btn safe ${selectedMark === 'safe' ? 'selected' : ''}" onclick="selectMark('safe')">
@@ -1219,10 +1147,10 @@
 
             <div class="comment-section">
               <label class="comment-label">Comment (optional)</label>
-              <textarea id="comment" placeholder="Add any notes...">${escapeHtml(comment)}</textarea>
+              <textarea id="comment" placeholder="Add any notes...">${escapeHtml(commentText)}</textarea>
             </div>
 
-            <button class="save-btn" onclick="saveAnnotation()" id="save-btn">${hasLegacyMark ? 'Update Annotation' : 'Save Annotation'}</button>
+            <button class="save-btn" onclick="saveAnnotation()" id="save-btn">${(legacy || disputed) ? 'Update Annotation' : 'Save Annotation'}</button>
           </div>
         </div>
       `;
@@ -1241,9 +1169,7 @@
 
     function selectMark(mark) {
       selectedMark = mark;
-      document.querySelectorAll('.mark-btn').forEach(btn => {
-        btn.classList.remove('selected');
-      });
+      document.querySelectorAll('.mark-btn').forEach(btn => btn.classList.remove('selected'));
       const selected = document.querySelector(`.mark-btn.${mark}`);
       if (selected) selected.classList.add('selected');
     }
@@ -1265,22 +1191,17 @@
         const response = await fetch(`/api/annotations/${task.task_id}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ mark: selectedMark, comment, annotator: currentAnnotator })
+          body: JSON.stringify({ mark: selectedMark, comment })
         });
 
         if (response.ok) {
-          // Update local data
+          const result = await response.json();
           const taskInAll = tasks.find(t => t.task_id === task.task_id);
-          if (taskInAll) {
-            taskInAll.annotation = { mark: selectedMark, comment };
-            if (!taskInAll.all_annotations) taskInAll.all_annotations = {};
-            taskInAll.all_annotations[currentAnnotator] = { mark: selectedMark, comment };
-          }
-          
+          if (taskInAll) taskInAll.annotation = result.annotation;
+
           showToast('Saved!');
           await loadStats();
-          
-          // Auto-advance
+
           if (currentIndex < filteredTasks.length - 1) {
             setTimeout(() => nextTask(), 400);
           } else {
@@ -1314,11 +1235,9 @@
       setTimeout(() => toast.remove(), 2000);
     }
 
-    // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
       if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') {
         if (e.key === 'Enter' && e.ctrlKey) saveAnnotation();
-        if (e.key === 'Enter' && e.target.id === 'annotator-input') login();
         return;
       }
 
